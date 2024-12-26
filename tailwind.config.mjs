@@ -11,7 +11,20 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'wave': "url('/images/wave.jpg')",
+      },
+      animation: {
+        float: "float 3s ease-in-out infinite", // Add floating animation
+      },
+      keyframes: {
+        float: {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
