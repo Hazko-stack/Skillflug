@@ -11,8 +11,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ['Bilyalared', 'sans-serif'], // Ganti default 'sans' menjadi Bilyalared
+      },
       backgroundImage: {
-        'wave': "url('/images/wave.jpg')",
+        'wave': "url('/images/space.png')",
       },
       animation: {
         float: "float 3s ease-in-out infinite", // Add floating animation
@@ -26,5 +29,9 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"),
+    require('tailwindcss-animated')
+  ],
+
+  
 };

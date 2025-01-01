@@ -23,23 +23,78 @@ export default function EkonomiPage() {
   const pdfData = {
     Ekonomi1: [
       {
-        title: 'tesssss ',
-        previewUrl: 'https://drive.google.com/file/d/1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh/preview',
-        downloadUrl: 'https://drive.google.com/uc?export=download&id=1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh',
+        title: 'Kebutuhan & Kelangkaan',
+        previewUrl: 'https://drive.google.com/file/d/1ZX9IJxeKzHE_BVgSC6GwJPX9YqRdheER/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1ZX9IJxeKzHE_BVgSC6GwJPX9YqRdheER',
+      },
+      {
+        title: 'Permasalahan Ekonomi',
+        previewUrl: 'https://drive.google.com/file/d/1NWVQrIcMY1qY27UKifwZdmNt7K78aPl_/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1NWVQrIcMY1qY27UKifwZdmNt7K78aPl_',
+      },
+      {
+        title: 'Bentuk-Bentuk Pasar',
+        previewUrl: 'https://drive.google.com/file/d/1HdQ1I01TjKsgkvzAOt6NuY60Pyn1LS1J/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1HdQ1I01TjKsgkvzAOt6NuY60Pyn1LS1J',
+      },
+      {
+        title: 'Permintaan & Penawaran',
+        previewUrl: 'https://drive.google.com/file/d/1F9HNExuhcJx7qHuqywLycmOGLvBBdvyh/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1F9HNExuhcJx7qHuqywLycmOGLvBBdvyh',
+      },
+      {
+        title: 'Sistem Perekonomian',
+        previewUrl: 'https://drive.google.com/file/d/10UZoR9EpxsmUMFRVt2bl-ZyfSv2_hzvj/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=10UZoR9EpxsmUMFRVt2bl-ZyfSv2_hzvj',
       },
     ],
     Ekonomi2: [
       {
-        title: 'PDF 2',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
+        title: 'Perbankan',
+        previewUrl: 'https://drive.google.com/file/d/135G8p1-QWNO87iIHr5K4uc_yvtnkGVlt/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=135G8p1-QWNO87iIHr5K4uc_yvtnkGVlt',
+      },
+      {
+        title: 'Inflasi & Indeks Harga',
+        previewUrl: 'https://drive.google.com/file/d/1YiEfIJoFx0acTZ5G8E50aZyBq9EEr8s2/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1YiEfIJoFx0acTZ5G8E50aZyBq9EEr8s2',
+      },
+      {
+        title: 'Ketenagakerjaan & Pengangguran',
+        previewUrl: 'https://drive.google.com/file/d/1avVHWDSL_KqoQhDXzzAuAAK9LM3VsTeR/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1avVHWDSL_KqoQhDXzzAuAAK9LM3VsTeR',
+      },
+      {
+        title: 'Kebijakan Moneter',
+        previewUrl: 'https://drive.google.com/file/d/1KtaKDnk0wC8bPZ7M5Wvv2jrH9J9EFahx/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1KtaKDnk0wC8bPZ7M5Wvv2jrH9J9EFahx',
+      },
+      {
+        title: 'Pendapatan Nasional',
+        previewUrl: 'https://drive.google.com/file/d/1lUNgDY5SFG9is3r4Ambh4Z156JTziidu/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1lUNgDY5SFG9is3r4Ambh4Z156JTziidu',
+      },
+      {
+        title: 'Uang',
+        previewUrl: 'https://drive.google.com/file/d/1Ti_HlI6iUg0peKu8d9JHEckqrjcGoP_q/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1Ti_HlI6iUg0peKu8d9JHEckqrjcGoP_q',
       },
     ],
     Ekonomi3: [
       {
-        title: 'PDF 3',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_11/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_11/view?usp=sharing',
+        title: 'APBN & APBD',
+        previewUrl: 'https://drive.google.com/file/d/1QipGr2Q2Q0ikGk1GiL-950l7fK6eHB-G/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1QipGr2Q2Q0ikGk1GiL-950l7fK6eHB-G',
+      },
+      {
+        title: 'Kebijaksanaan Fiskal',
+        previewUrl: 'https://drive.google.com/file/d/1QgoCqn_mmn84yQJtW3uxO00mhk_0O3Oq/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1QgoCqn_mmn84yQJtW3uxO00mhk_0O3Oq',
+      },
+      {
+        title: 'Pasar Modal',
+        previewUrl: 'https://drive.google.com/file/d/1n20onKWbKKkGbTPi5NuwPOs2uUSWll8d/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1n20onKWbKKkGbTPi5NuwPOs2uUSWll8d',
       },
     ],
   };
@@ -47,7 +102,7 @@ export default function EkonomiPage() {
   return (
     <div
       className="min-h-screen flex flex-col items-center py-4 px-8 bg-cover bg-center"
-      style={{ backgroundImage: 'url(/images/wave.jpg)' }}
+      style={{ backgroundImage: 'url(/images/space.png)' }}
     >
       <h1 className="text-3xl mb-6 text-white mt-28 md:mt-32">Ekonomi Materi</h1>
 
@@ -60,7 +115,7 @@ export default function EkonomiPage() {
         >
           <option value="Ekonomi1">Ekonomi 1</option>
           <option value="Ekonomi2">Ekonomi 2</option>
-          <option value="Ekonomi">Ekonomi 3</option>
+          <option value="Ekonomi3">Ekonomi 3</option>
         </select>
       </div>
 

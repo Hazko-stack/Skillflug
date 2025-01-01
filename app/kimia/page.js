@@ -1,144 +1,89 @@
-'use client'; // Add this to mark the file as a client component
+import Link from "next/link"; // Import Link from Next.js
 
-import { useState } from 'react';
-
-export default function KimiaPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [pdfUrl, setPdfUrl] = useState('');
-  const [selectedChapter, setSelectedChapter] = useState('Kimia1');
-
-  // Function to open the modal and preview PDF
-  const openModal = (url) => {
-    setPdfUrl(url);
-    setIsModalOpen(true);
-  };
-
-  // Function to close the modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setPdfUrl('');
-  };
-
-  // Data for the PDFs (replace these links with actual Google Drive links)
-  const pdfData = {
-    Kimia1: [
-      {
-        title: 'tesssss ',
-        previewUrl: 'https://drive.google.com/file/d/1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh/preview',
-        downloadUrl: 'https://drive.google.com/uc?export=download&id=1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh',
-      },
-      {
-        title: 'tesss lagi ',
-        previewUrl: 'https://drive.google.com/file/d/1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh/preview',
-        downloadUrl: 'https://drive.google.com/uc?export=download&id=1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh',
-      },
-    ],
-    Kimia2: [
-      {
-        title: 'PDF 2',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
-      },
-    ],
-    Kimia3: [
-      {
-        title: 'PDF 3',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_11/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_11/view?usp=sharing',
-      },
-    ],
-    Kimia4: [
-      {
-        title: 'PDF 4',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_16/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_16/view?usp=sharing',
-      },
-    ],
-  };
-
+export default function KimPage() {
   return (
-    <div
-      className="min-h-screen flex flex-col items-center py-4 px-8 bg-cover bg-center"
-      style={{ backgroundImage: 'url(/images/wave.jpg)' }}
-    >
-      <h1 className="text-3xl mb-6 text-white mt-28 md:mt-32">Kimia Materi</h1>
+    <div className="flex flex-col items-center justify-between min-h-screen py-4 px-4 sm:px-8 space-y-4 bg-wave bg-cover bg-center">
 
-      {/* Dropdown to select chapter */}
-      <div className="mb-6">
-        <select
-          value={selectedChapter}
-          onChange={(e) => setSelectedChapter(e.target.value)}
-          className="px-4 py-2 border rounded-md"
-        >
-          <option value="Kimia1">Kimia 1</option>
-          <option value="Kimia2">Kimia 2</option>
-          <option value="Kimia3">Kimia 3</option>
-          <option value="Kimia4">Kimia4 4</option>
-        </select>
-      </div>
+      {/* Horizontal Scrollable Cards Section */}
+      <div className="flex overflow-x-auto space-x-4 w-full">
 
-      <div className="space-y-4 w-full">
-        {/* Display PDFs for selected chapter */}
-        {pdfData[selectedChapter]?.map((pdf, index) => (
-          <div key={index} className="p-4 rounded-md shadow-lg bg-white">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold text-gray-800">{pdf.title}</h2>
-              <div className="space-x-4">
-                {/* Preview Button */}
-                <button
-                  onClick={() => openModal(pdf.previewUrl)}
-                  className="btn btn-primary btn-sm"
-                >
-                  Preview
-                </button>
-
-                {/* Download Button */}
-                <a
-                  href={pdf.downloadUrl}
-                  target="_blank"
-                  className="btn btn-secondary btn-sm"
-                  rel="noopener noreferrer"
-                >
-                  Download
-                </a>
-              </div>
+        {/* Card 1 - Kimia1 */}
+        <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Kimia1"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Kimia 1</h2>
+            <p>Pelajari dasar-dasar kimia dan konsep-konsep pentingnya.</p>
+            <div className="card-actions justify-end">
+              <Link href="/kimia/kim1">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Modal for PDF preview */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-lg max-w-3xl w-full md:w-2/3 lg:w-1/2">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-red-600"
-            >
-              X
-            </button>
-            <h2 className="text-2xl ">PDF Preview</h2>
-            <div className="pdf-preview-container">
-              {/* iframe with reduced size and scrolling */}
-              <iframe
-                src={pdfUrl}
-                width="100%"
-                height="300px"  // Reduced height
-                frameBorder="0"
-                title="PDF Preview"
-              />
-            </div>
-            <a
-              href={pdfUrl}
-              target="_blank"
-              className="text-blue-600 mt-4 block text-center"
-              rel="noopener noreferrer"
-            >
-              Download PDF
-            </a>
           </div>
         </div>
-      )}
+
+        {/* Card 2 - Kimia2 */}
+        <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Kimia2"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Kimia 2</h2>
+            <p>Pelajari konsep-konsep kimia lanjutan dan aplikasinya dalam kehidupan.</p>
+            <div className="card-actions justify-end">
+              <Link href="/kimia/kim2">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 3 - Kimia3 */}
+        <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Kimia3"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Kimia 3</h2>
+            <p>Pelajari konsep-konsep kimia tingkat lanjut untuk memahami dunia kimia.</p>
+            <div className="card-actions justify-end">
+              <Link href="/kimia/kim3">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 4 - Kimia4 */}
+        <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Kimia4"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Kimia 4</h2>
+            <p>Pelajari topik-topik kimia yang lebih mendalam dan eksperimen.</p>
+            <div className="card-actions justify-end">
+              <Link href="/kimia/kim4">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }

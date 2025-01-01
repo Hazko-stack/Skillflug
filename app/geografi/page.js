@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function GeografiPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [pdfUrl, setPdfUrl] = useState('');
-  const [selectedChapter, setSelectedChapter] = useState('Matematika1');
+  const [selectedChapter, setSelectedChapter] = useState('Geografi1');
 
   // Function to open the modal and preview PDF
   const openModal = (url) => {
@@ -23,24 +23,58 @@ export default function GeografiPage() {
   const pdfData = {
     Geografi1: [
       {
-        title: 'tesssss ',
-        previewUrl: 'https://drive.google.com/file/d/1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh/preview',
-        downloadUrl: 'https://drive.google.com/uc?export=download&id=1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh',
+        title: 'Atmosfer',
+        previewUrl: 'https://drive.google.com/file/d/1SgvZ4Etiw92waFgZODuFgWV8avGw9nXa/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1SgvZ4Etiw92waFgZODuFgWV8avGw9nXa',
+      },
+      {
+        title: 'Gempa Bumi',
+        previewUrl: 'https://drive.google.com/file/d/1S9-I15kBgzQszac7f_qEnTe_2XRFb8tU/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1S9-I15kBgzQszac7f_qEnTe_2XRFb8tU',
+      },
+      {
+        title: 'Hidrosfer',
+        previewUrl: 'https://drive.google.com/file/d/11NZ4JBG1HG52YlYpcOZoNgjR5brgUUpM/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=11NZ4JBG1HG52YlYpcOZoNgjR5brgUUpM',
+      },
+      {
+        title: 'Ilmu Geografi',
+        previewUrl: 'https://drive.google.com/file/d/147ICLLv7Mgsc82DxOSXKL93Sev9Ouxiz/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=147ICLLv7Mgsc82DxOSXKL93Sev9Ouxiz',
+      },
+      {
+        title: 'Lithosfer',
+        previewUrl: 'https://drive.google.com/file/d/1oxSPM9dBObofQFTVzTm9uvpUwfspmteu/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1oxSPM9dBObofQFTVzTm9uvpUwfspmteu',
+      },
+      {
+        title: 'Pedosfer',
+        previewUrl: 'https://drive.google.com/file/d/1ShuZbw8e7SfVgHKMkveX-biEiqjhNR84/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1ShuZbw8e7SfVgHKMkveX-biEiqjhNR84',
       },
     ],
     Geografi2: [
       {
-        title: 'PDF 2',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
+        title: 'Antroposfer',
+        previewUrl: 'https://drive.google.com/file/d/1abp04lG7wT9SizNf5TcGjX4qLzHM6GeX/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1abp04lG7wT9SizNf5TcGjX4qLzHM6GeX',
+      },
+      {
+        title: 'Biosfer',
+        previewUrl: 'https://drive.google.com/file/d/1kt-OzxI6zjoB3vzLWI4fru3pS302V1n2/preview',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1kt-OzxI6zjoB3vzLWI4fru3pS302V1n2',
       },
     ],
   };
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center py-4 px-8 bg-cover bg-center"
-      style={{ backgroundImage: 'url(/images/wave.jpg)' }}
+      className="min-h-screen flex flex-col items-center py-4 px-8 space-y-4"
+      style={{
+        backgroundImage: 'url(/images/space.png)', // Use the wave or patterned background
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
       <h1 className="text-3xl mb-6 text-white mt-28 md:mt-32">Geografi Materi</h1>
 
@@ -96,7 +130,7 @@ export default function GeografiPage() {
             >
               X
             </button>
-            <h2 className="text-2xl ">PDF Preview</h2>
+            <h2 className="text-2xl">PDF Preview</h2>
             <div className="pdf-preview-container">
               {/* iframe with reduced size and scrolling */}
               <iframe

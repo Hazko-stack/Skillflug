@@ -1,139 +1,86 @@
-'use client'; // Add this to mark the file as a client component
+import Link from "next/link"; // Import Link from Next.js
 
-import { useState } from 'react';
-
-export default function FisikaPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [pdfUrl, setPdfUrl] = useState('');
-  const [selectedChapter, setSelectedChapter] = useState('Fisika1');
-
-  // Function to open the modal and preview PDF
-  const openModal = (url) => {
-    setPdfUrl(url);
-    setIsModalOpen(true);
-  };
-
-  // Function to close the modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setPdfUrl('');
-  };
-
-  // Data for the PDFs (replace these links with actual Google Drive links)
-  const pdfData = {
-    Fisika1: [
-      {
-        title: 'tesssss ',
-        previewUrl: 'https://drive.google.com/file/d/1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh/preview',
-        downloadUrl: 'https://drive.google.com/uc?export=download&id=1YvPb0e7li2d7e9CPLVXjrnAftBv9fSWh',
-      },
-    ],
-    Fisika2: [
-      {
-        title: 'PDF 2',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_6/view?usp=sharing',
-      },
-    ],
-    Fisika3: [
-      {
-        title: 'PDF 3',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_11/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_11/view?usp=sharing',
-      },
-    ],
-    Fisika4: [
-      {
-        title: 'PDF 4',
-        previewUrl: 'https://drive.google.com/file/d/FILE_ID_16/view?usp=sharing',
-        downloadUrl: 'https://drive.google.com/file/d/FILE_ID_16/view?usp=sharing',
-      },
-    ],
-  };
-
+export default function FisPage() {
   return (
-    <div
-      className="min-h-screen flex flex-col items-center py-4 px-8 bg-cover bg-center"
-      style={{ backgroundImage: 'url(/images/wave.jpg)' }}
-    >
-      <h1 className="text-3xl mb-6 text-white mt-28 md:mt-32">Fisika Materi</h1>
-
-      {/* Dropdown to select chapter */}
-      <div className="mb-6">
-        <select
-          value={selectedChapter}
-          onChange={(e) => setSelectedChapter(e.target.value)}
-          className="px-4 py-2 border rounded-md"
-        >
-          <option value="Fisika1">Fisika 1</option>
-          <option value="Fisika2">Fisika 2</option>
-          <option value="Fisika3">Fisika 3</option>
-          <option value="Fisika4">Fisika 4</option>
-        </select>
-      </div>
-
-      <div className="space-y-4 w-full">
-        {/* Display PDFs for selected chapter */}
-        {pdfData[selectedChapter]?.map((pdf, index) => (
-          <div key={index} className="p-4 rounded-md shadow-lg bg-white">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold text-gray-800">{pdf.title}</h2>
-              <div className="space-x-4">
-                {/* Preview Button */}
-                <button
-                  onClick={() => openModal(pdf.previewUrl)}
-                  className="btn btn-primary btn-sm"
-                >
-                  Preview
-                </button>
-
-                {/* Download Button */}
-                <a
-                  href={pdf.downloadUrl}
-                  target="_blank"
-                  className="btn btn-secondary btn-sm"
-                  rel="noopener noreferrer"
-                >
-                  Download
-                </a>
-              </div>
+    <div className="flex flex-col items-center justify-between min-h-screen py-4 px-4 sm:px-8 space-y-4 bg-wave bg-cover bg-center">
+      {/* Horizontal Scrollable Cards Section */}
+      <div className="flex overflow-x-auto space-x-4 w-full">
+        {/* Card 1 - Fisika1 */}
+        <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Fisika1"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Fisika 1</h2>
+            <p>Pelajari dasar-dasar fisika dan konsep-konsep pentingnya.</p>
+            <div className="card-actions justify-end">
+              <Link href="/fisika/fis1">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Modal for PDF preview */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
-          <div className="bg-white p-6 rounded-lg max-w-3xl w-full md:w-2/3 lg:w-1/2">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-red-600"
-            >
-              X
-            </button>
-            <h2 className="text-2xl ">PDF Preview</h2>
-            <div className="pdf-preview-container">
-              {/* iframe with reduced size and scrolling */}
-              <iframe
-                src={pdfUrl}
-                width="100%"
-                height="300px"  // Reduced height
-                frameBorder="0"
-                title="PDF Preview"
-              />
-            </div>
-            <a
-              href={pdfUrl}
-              target="_blank"
-              className="text-blue-600 mt-4 block text-center"
-              rel="noopener noreferrer"
-            >
-              Download PDF
-            </a>
           </div>
         </div>
-      )}
+
+        {/* Card 2 - Fisika2 */}
+        <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Fisika2"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Fisika 2</h2>
+            <p>Pelajari konsep fisika lanjutan dan aplikasinya dalam kehidupan.</p>
+            <div className="card-actions justify-end">
+              <Link href="/fisika/fis2">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 3 - Fisika3 */}
+        <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Fisika3"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Fisika 3</h2>
+            <p>Pelajari konsep fisika tingkat lanjut untuk memahami dunia fisik.</p>
+            <div className="card-actions justify-end">
+              <Link href="/fisika/fis3">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Card 4 - Fisika4 */}
+        <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
+          <figure>
+            <img
+              src="/images/Booklesson.png" // Local image path
+              alt="Fisika4"
+            />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">Fisika 4</h2>
+            <p>Pelajari topik-topik fisika yang lebih mendalam dan eksperimen.</p>
+            <div className="card-actions justify-end">
+              <Link href="/fisika/fis4">
+                <button className="btn btn-primary">Explore</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
