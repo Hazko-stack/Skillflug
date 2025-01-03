@@ -104,7 +104,7 @@ export default function EkonomiPage() {
       className="min-h-screen flex flex-col items-center py-4 px-8 bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/space.png)' }}
     >
-      <h1 className="text-3xl mb-6 text-white mt-28 md:mt-32">Ekonomi Materi</h1>
+      <h1 className="text-3xl mb-6 text-violet-950 font-bold mt-28 md:mt-32">Ekonomi Materi</h1>
 
       {/* Dropdown to select chapter */}
       <div className="mb-6">

@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   {/* Menu with icons */}
   <Link
     href="/"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/ai"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/lesson"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/task"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -112,9 +112,28 @@ export default function RootLayout({ children }) {
     </svg>
     To-do List
   </Link>
+  <Link
+    href="/exercise"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6 text-white mr-2 group-hover:text-violet-600"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      />
+    </svg>
+    Exercise
+  </Link>
 </div>
-
-        </div>
+ </div>
 
         {/* Main Content Area */}
         <div className="flex-1 lg:ml-[20%] w-full">{children}</div>
@@ -208,6 +227,28 @@ export default function RootLayout({ children }) {
                     />
                   </svg>
                 </Link>
+              </li>
+              <li>
+              <Link
+                href="/exercise"
+                className="tooltip tooltip-top"
+                data-tip="Exercise"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-blue-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </Link>
               </li>
             </ul>
           </div>

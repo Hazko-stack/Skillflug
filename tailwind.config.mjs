@@ -17,21 +17,10 @@ export default {
       backgroundImage: {
         'wave': "url('/images/space.png')",
       },
-      animation: {
-        float: "float 3s ease-in-out infinite", // Add floating animation
-      },
-      keyframes: {
-        float: {
-          "0%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-          "100%": { transform: "translateY(0)" },
-        },
-      },
     },
   },
   plugins: [require("daisyui"),
-    require('tailwindcss-animated')
+    require('tailwindcss-animated'),
+    require('tailwindcss-motion'),
   ],
-
-  
 };

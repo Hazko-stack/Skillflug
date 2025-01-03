@@ -38,8 +38,8 @@ export default function task() {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex justify-between items-center mb-5 bg-white bg-opacity-80 p-3 rounded">
-        <h1 className="text-2xl md:text-3xl font-bold text-violet-600">Todo List</h1>
+      <div className="flex justify-between items-center mb-5 bg-white bg-opacity-80 p-3 rounded animate animate-fade-down">
+        <h1 className="text-2xl md:text-3xl font-bold text-violet-600 animate-fade-right animate-delay-500">Todo List</h1>
       </div>
       <div className="bg-white bg-opacity-90 p-5 rounded shadow-lg flex flex-col space-y-5">
         <TodoForm addTodo={addTodo} />

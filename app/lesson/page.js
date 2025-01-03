@@ -7,7 +7,7 @@ export default function LessonPage() {
         {/* Horizontal Scrollable Cards Section */}
         <div className="flex overflow-x-auto space-x-4 w-full bg-transparent">
           {/* Card 1 - Biologi */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
@@ -26,7 +26,7 @@ export default function LessonPage() {
           </div>
 
           {/* Card 2 - Fisika */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-up animate-delay-200 ">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
@@ -45,7 +45,7 @@ export default function LessonPage() {
           </div>
 
           {/* Card 3 - Kimia */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
@@ -64,7 +64,7 @@ export default function LessonPage() {
           </div>
 
           {/* Card 4 - Matematika */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-up animate-delay-200">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
@@ -83,7 +83,7 @@ export default function LessonPage() {
           </div>
 
           {/* Card 5 - Geografi */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
@@ -102,7 +102,7 @@ export default function LessonPage() {
           </div>
 
           {/* Card 6 - Sejarah */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-up animate-delay-200">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
@@ -121,7 +121,7 @@ export default function LessonPage() {
           </div>
 
           {/* Card 7 - Ekonomi */}
-          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group">
+          <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
                 src="/images/Booklesson.png" // Local image path
