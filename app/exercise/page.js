@@ -1,54 +1,87 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link'; // Import Link for navigation
+import Link from 'next/link';
 
 const ExercisePage = () => {
-  const [question, setQuestion] = useState(null);
-  const [options, setOptions] = useState([]);
-  const [difficulty, setDifficulty] = useState('easy');
+  const [category, setCategory] = useState('22'); // Set default category to Geography
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [questions, setQuestions] = useState([]);
   const [isCorrect, setIsCorrect] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [newPokemon, setNewPokemon] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
-  const generateQuestion = (difficulty) => {
-    const questions = {
-      easy: {
-        question: 'What is 2 + 2?',
-        options: ["3", "4", "5", "6"],
-        answer: "4",
-      },
-      medium: {
-        question: 'What is 12 * 12?',
-        options: ["124", "144", "132", "120"],
-        answer: "144",
-      },
-      hard: {
-        question: 'What is the square root of 289?',
-        options: ["16", "18", "17", "19"],
-        answer: "17",
-      },
-    };
+  const difficulty = 'easy'; // Always set to 'easy'
 
-    return questions[difficulty];
+  const fetchQuestionsFromAPI = async (selectedCategory) => {
+    setLoading(true); // Start loading
+    setQuestions([]); // Clear previous questions when category changes
+    setCurrentQuestionIndex(0); // Reset the question index
+    try {
+      console.log(`Fetching questions for category: ${selectedCategory}`);
+      const response = await fetch(
+        `https://opentdb.com/api.php?amount=10${selectedCategory ? `&category=${selectedCategory}` : ''}&difficulty=${difficulty}&type=multiple`
+      );
+
+      // Check if the response is ok
+      if (!response.ok) {
+        throw new Error('Failed to fetch questions');
+      }
+
+      const data = await response.json();
+      console.log('API Response:', data); // Log response for debugging
+
+      if (!data.results || data.results.length === 0) {
+        console.warn('No questions available for the selected category and difficulty.');
+        setQuestions([]);
+        return;
+      }
+
+      const formattedQuestions = data.results.map((question) => {
+        const allOptions = [...question.incorrect_answers, question.correct_answer];
+        return {
+          question: question.question,
+          options: allOptions.sort(() => Math.random() - 0.5), // Randomize answer options
+          answer: question.correct_answer,
+        };
+      });
+
+      setQuestions(formattedQuestions);
+      setIsCorrect(null); // Reset answer status
+    } catch (error) {
+      console.error('Error fetching questions:', error);
+      setQuestions([]);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
 
-  const fetchPokemonFromAPI = async (difficulty) => {
+  useEffect(() => {
+    if (category) {
+      fetchQuestionsFromAPI(category);
+    }
+  }, [category]);
+
+  const handleAnswer = (selectedOption) => {
+    if (selectedOption === questions[currentQuestionIndex].answer) {
+      setIsCorrect(true);
+      if (currentQuestionIndex === questions.length - 1) {
+        fetchPokemonFromAPI();
+      } else {
+        setCurrentQuestionIndex((prev) => prev + 1);
+      }
+    } else {
+      setIsCorrect(false);
+    }
+  };
+
+  const fetchPokemonFromAPI = async () => {
     setLoading(true);
     try {
-      const pokemonRanges = {
-        easy: { start: 1, end: 151 },
-        medium: { start: 152, end: 251 },
-        hard: { start: 252, end: 386 },
-      };
-
-      const { start, end } = pokemonRanges[difficulty];
-      const randomId = Math.floor(Math.random() * (end - start + 1)) + start;
-
+      const randomId = Math.floor(Math.random() * 386) + 1;
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
       const data = await response.json();
-
       const pokemon = { name: data.name, image: data.sprites.front_default };
       setNewPokemon(pokemon);
       saveToLocalStorage(pokemon);
@@ -66,58 +99,66 @@ const ExercisePage = () => {
     localStorage.setItem('collectedPokemons', JSON.stringify(updatedPokemons));
   };
 
-  useEffect(() => {
-    const newQuestion = generateQuestion(difficulty);
-    setQuestion(newQuestion.question);
-    setOptions(newQuestion.options);
-  }, [difficulty]);
-
-  const handleAnswer = (selectedOption) => {
-    const correctAnswer = generateQuestion(difficulty).answer;
-    if (selectedOption === correctAnswer) {
-      setIsCorrect(true);
-      fetchPokemonFromAPI(difficulty);
-    } else {
-      setIsCorrect(false);
-    }
-  };
-
   return (
     <div
       className="min-h-screen bg-cover bg-center flex flex-col items-center p-4"
       style={{ backgroundImage: "url('/images/space.png')" }}
     >
       <h1 className="text-3xl font-bold mb-4 text-indigo-950">Pokémon Exercise</h1>
-      <div className="bg-white/80 backdrop-blur-md shadow-md rounded p-6 w-full max-w-md">
-        <p className="text-lg mb-4 font-semibold text-gray-800">{question}</p>
-        <div className="grid grid-cols-2 gap-4">
-          {options.map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleAnswer(option)}
-              className="bg-violet-700 text-white p-2 rounded hover:bg-violet-800"
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-        {isCorrect !== null && (
-          <p className={`mt-4 text-lg ${isCorrect ? 'text-green-500' : 'text-red-500'}`}>
-            {isCorrect ? 'Correct!' : 'Wrong answer. Try again!'}
-          </p>
-        )}
-        {loading && <p className="mt-4 text-blue-500">Fetching Pokémon...</p>}
-        <button className="mt-6 bg-violet-700 text-white p-2 rounded hover:bg-violet-800">
-          <Link href="/collection">Go to Collection</Link>
-        </button>
+
+      <div className="mb-4">
+        <label htmlFor="category" className="mr-2 font-bold text-indigo-950">
+          Choose Category:
+        </label>
+        <select
+          id="category"
+          value={category}
+          onChange={(e) => {
+            setCategory(e.target.value);
+          }}
+          className="border rounded p-2"
+        >
+          <option value="22">Geography</option>
+        </select>
       </div>
+
+      {loading ? (
+        <p className="text-lg text-gray-700">Loading questions...</p>
+      ) : questions.length === 0 ? (
+        <p className="text-lg text-red-500">No questions available. Please try again later.</p>
+      ) : (
+        <div className="bg-white/80 backdrop-blur-md shadow-md rounded p-6 w-full max-w-md">
+          <p className="text-lg mb-4 font-semibold text-gray-800">
+            {questions[currentQuestionIndex]?.question}
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            {questions[currentQuestionIndex]?.options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswer(option)}
+                className="bg-violet-700 text-white p-2 rounded hover:bg-violet-800"
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          {isCorrect !== null && (
+            <p className={`mt-4 text-lg ${isCorrect ? 'text-green-500' : 'text-red-500'}`}>
+              {isCorrect ? 'Correct!' : 'Wrong answer. Try again!'}
+            </p>
+          )}
+          <button className="mt-6 bg-violet-700 text-white p-2 rounded hover:bg-violet-800">
+            <Link href="/collection">Go to Collection</Link>
+          </button>
+        </div>
+      )}
 
       {showPopup && newPokemon && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-6 rounded shadow-lg text-center">
-            <h2 className="text-2xl font-bold mb-4">Congrats!</h2>
+            <h2 className="text-2xl font-bold mb-4 text-violet-700">Congrats!</h2>
             <img src={newPokemon.image} alt={newPokemon.name} className="w-24 h-24 mx-auto mb-4" />
-            <p>You caught {newPokemon.name}!</p>
+            <p className='text-violet-700'>You caught {newPokemon.name}!</p>
             <button
               onClick={() => setShowPopup(false)}
               className="mt-4 bg-violet-700 text-white px-4 py-2 rounded hover:bg-violet-800"
@@ -127,20 +168,6 @@ const ExercisePage = () => {
           </div>
         </div>
       )}
-
-      <div className="mt-8">
-        <label htmlFor="difficulty" className="mr-2 font-bold text-indigo-950">Choose Difficulty:</label>
-        <select
-          id="difficulty"
-          value={difficulty}
-          onChange={(e) => setDifficulty(e.target.value)}
-          className="border rounded p-2"
-        >
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-      </div>
     </div>
   );
 };
