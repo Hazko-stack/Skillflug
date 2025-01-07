@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Next Gen Learn",
-  description: "Groq AI + Next.js 14 setup",
+  description: "by Unnoticed Concuerors",
 };
 
 export default function RootLayout({ children }) {
@@ -25,11 +25,6 @@ export default function RootLayout({ children }) {
     <span className="text-white text-xl ml-1">GEN LEARN</span>
   </Link>
 </div>
-
-
-
-
-
 <div className="navbar-center flex flex-col p-4 space-y-4 text-lg">
   {/* Menu with icons */}
   <Link
@@ -135,9 +130,8 @@ export default function RootLayout({ children }) {
 </div>
  </div>
 
-        {/* Main Content Area */}
+        
         <div className="flex-1 lg:ml-[20%] w-full">{children}</div>
-
         {/* Mobile Floating Bottom Navigation */}
         <div className="lg:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full shadow-lg p-2">

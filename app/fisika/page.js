@@ -1,15 +1,14 @@
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link"; 
 
 export default function FisPage() {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen py-4 px-4 sm:px-8 space-y-4 bg-wave bg-cover bg-center">
-      {/* Horizontal Scrollable Cards Section */}
       <div className="flex overflow-x-auto space-x-4 w-full">
-        {/* Card 1 - Fisika1 */}
+
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Fisika1"
             />
           </figure>
@@ -28,7 +27,7 @@ export default function FisPage() {
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Fisika2"
             />
           </figure>
@@ -47,7 +46,7 @@ export default function FisPage() {
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Fisika3"
             />
           </figure>
@@ -66,7 +65,7 @@ export default function FisPage() {
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png"
               alt="Fisika4"
             />
           </figure>

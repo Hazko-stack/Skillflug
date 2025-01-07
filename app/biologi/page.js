@@ -1,15 +1,14 @@
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link"; 
 
 export default function BioPage() {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen py-4 px-4 sm:px-8 space-y-4 bg-wave bg-cover bg-center">
-      {/* Horizontal Scrollable Cards Section */}
       <div className="flex overflow-x-auto space-x-4 w-full">
-        {/* Card 1 - Biologi1 */}
+
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Biologi1"
             />
           </figure>
@@ -24,11 +23,10 @@ export default function BioPage() {
           </div>
         </div>
 
-        {/* Card 2 - Biologi2 */}
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Biologi2"
             />
           </figure>
@@ -43,11 +41,10 @@ export default function BioPage() {
           </div>
         </div>
 
-        {/* Card 3 - Biologi3 */}
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Biologi3"
             />
           </figure>
@@ -66,7 +63,7 @@ export default function BioPage() {
         <div className="card bg-base-100 shadow-xl flex-shrink-0 w-80">
           <figure>
             <img
-              src="/images/Booklesson.png" // Local image path
+              src="/images/Booklesson.png" 
               alt="Biologi4"
             />
           </figure>

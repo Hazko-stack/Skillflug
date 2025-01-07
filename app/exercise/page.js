@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const ExercisePage = () => {
-  const [category, setCategory] = useState('22'); // Set default category to Geography
+  const [category, setCategory] = useState('22'); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [isCorrect, setIsCorrect] = useState(null);
@@ -12,25 +12,24 @@ const ExercisePage = () => {
   const [newPokemon, setNewPokemon] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
-  const difficulty = 'easy'; // Always set to 'easy'
+  const difficulty = 'easy'; 
 
   const fetchQuestionsFromAPI = async (selectedCategory) => {
-    setLoading(true); // Start loading
-    setQuestions([]); // Clear previous questions when category changes
-    setCurrentQuestionIndex(0); // Reset the question index
+    setLoading(true); 
+    setQuestions([]); 
+    setCurrentQuestionIndex(0); 
     try {
       console.log(`Fetching questions for category: ${selectedCategory}`);
       const response = await fetch(
         `https://opentdb.com/api.php?amount=10${selectedCategory ? `&category=${selectedCategory}` : ''}&difficulty=${difficulty}&type=multiple`
       );
 
-      // Check if the response is ok
       if (!response.ok) {
         throw new Error('Failed to fetch questions');
       }
 
       const data = await response.json();
-      console.log('API Response:', data); // Log response for debugging
+      console.log('API Response:', data); 
 
       if (!data.results || data.results.length === 0) {
         console.warn('No questions available for the selected category and difficulty.');
@@ -42,18 +41,18 @@ const ExercisePage = () => {
         const allOptions = [...question.incorrect_answers, question.correct_answer];
         return {
           question: question.question,
-          options: allOptions.sort(() => Math.random() - 0.5), // Randomize answer options
+          options: allOptions.sort(() => Math.random() - 0.5), 
           answer: question.correct_answer,
         };
       });
 
       setQuestions(formattedQuestions);
-      setIsCorrect(null); // Reset answer status
+      setIsCorrect(null); 
     } catch (error) {
       console.error('Error fetching questions:', error);
       setQuestions([]);
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   };
 

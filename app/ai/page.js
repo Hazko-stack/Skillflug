@@ -1,4 +1,4 @@
-"use client"; // Add this line to make the component a client component
+"use client"; 
 
 import { useState } from "react";
 
@@ -6,11 +6,11 @@ export default function AI() {
   const [isLoading, setIsLoading] = useState(false);
   const [aiResponse, setAiResponse] = useState("");
   const [userMessage, setUserMessage] = useState("");
-  const [messages, setMessages] = useState([]); // Array to hold user and AI messages
+  const [messages, setMessages] = useState([]); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!userMessage.trim()) return; // Don't send empty messages
+    if (!userMessage.trim()) return; 
     try {
       setIsLoading(true);
       const res = await fetch("/api/groq", {
@@ -22,13 +22,13 @@ export default function AI() {
       });
       const data = await res.json();
       
-      // Update the message array with both user and AI responses
+      
       setMessages((prevMessages) => [
         ...prevMessages,
         { type: "user", content: userMessage },
         { type: "ai", content: data.content },
       ]);
-      setUserMessage(""); // Clear input after sending
+      setUserMessage(""); 
     } catch (error) {
       console.error(error);
     } finally {
@@ -39,12 +39,10 @@ export default function AI() {
   return (
     <main className="flex items-center justify-center min-h-screen px-4 sm:px-0 bg-cover bg-center bg-[url('/images/space.png')]">
       <div className="flex flex-col justify-between w-full max-w-2xl h-full shadow-lg overflow-hidden mt-0 sm:w-full lg:w-full bg-gray-800 text-white rounded-lg">
-        {/* Chat Header */}
         <div className="p-4 bg-violet-700 text-white text-xl font-semibold animate-fade-down">
           <span>Chat with KAORI AI</span>
         </div>
 
-        {/* Chat Messages */}
         <div className="flex-1 p-6 space-y-6 overflow-y-auto max-h-[70vh] min-h-[300px] flex flex-col justify-start">
           {messages.length === 0 ? (
             <div className="text-gray-400 text-center animate-fade-down">Waiting for your input...</div>
@@ -66,7 +64,6 @@ export default function AI() {
           )}
         </div>
 
-        {/* Input Area */}
         <form
           onSubmit={handleSubmit}
           className="flex items-center p-4 border-t bg-gray-700 animate-fade-up"

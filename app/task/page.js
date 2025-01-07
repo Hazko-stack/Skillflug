@@ -1,5 +1,5 @@
-// pages/index.js
 "use client";
+
 import { useState, useEffect } from "react";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
@@ -7,7 +7,6 @@ import TodoList from "../components/TodoList";
 export default function task() {
   const [todos, setTodos] = useState([]);
 
-  // Load todos from localStorage when the component mounts
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem("todos"));
     if (savedTodos) {
@@ -15,14 +14,12 @@ export default function task() {
     }
   }, []);
 
-  // Add todo to the list and update localStorage
   const addTodo = (todo) => {
     const updatedTodos = [...todos, todo];
     setTodos(updatedTodos);
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
-  // Delete a todo and update localStorage
   const deleteTodo = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);

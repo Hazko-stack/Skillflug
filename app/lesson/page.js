@@ -1,16 +1,15 @@
-import Link from "next/link"; // Import Link from Next.js
+import Link from "next/link"; 
 
 export default function LessonPage() {
   return (
     <main className="flex items-center justify-center min-h-screen px-4 sm:px-0 bg-cover bg-center bg-[url('/images/space.png')]">
       <div className="flex flex-col justify-between w-full max-w-7xl h-full shadow-lg overflow-hidden mt-2 items-center sm:w-full lg:w-full bg-transparent text-white rounded-lg">
-        {/* Horizontal Scrollable Cards Section */}
         <div className="flex overflow-x-auto space-x-4 w-full bg-transparent">
           {/* Card 1 - Biologi */}
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Biologi"
               />
             </figure>
@@ -29,7 +28,7 @@ export default function LessonPage() {
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-up animate-delay-200 ">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Fisika"
               />
             </figure>
@@ -48,7 +47,7 @@ export default function LessonPage() {
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Kimia"
               />
             </figure>
@@ -67,7 +66,7 @@ export default function LessonPage() {
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-up animate-delay-200">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Matematika"
               />
             </figure>
@@ -86,7 +85,7 @@ export default function LessonPage() {
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Geografi"
               />
             </figure>
@@ -105,7 +104,7 @@ export default function LessonPage() {
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-up animate-delay-200">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Sejarah"
               />
             </figure>
@@ -124,7 +123,7 @@ export default function LessonPage() {
           <div className="card bg-base-100 w-80 shadow-xl flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-opacity-80 hover:bg-gray-900 ml-4 group animate-fade-down animate-delay-200">
             <figure>
               <img
-                src="/images/Booklesson.png" // Local image path
+                src="/images/Booklesson.png" 
                 alt="Ekonomi"
               />
             </figure>

@@ -1,4 +1,4 @@
-'use client'; // Add this to mark the file as a client component
+'use client'; 
 
 import { useState } from 'react';
 
@@ -7,19 +7,16 @@ export default function FisikaPage() {
   const [pdfUrl, setPdfUrl] = useState('');
   const [selectedChapter, setSelectedChapter] = useState('Mf');
 
-  // Function to open the modal and preview PDF
   const openModal = (url) => {
     setPdfUrl(url);
     setIsModalOpen(true);
   };
 
-  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
     setPdfUrl('');
   };
 
-  // Data for the PDFs (replace these links with actual Google Drive links)
   const pdfData = {
     Mf: [
       {
@@ -69,7 +66,6 @@ export default function FisikaPage() {
     >
       <h1 className="text-3xl mb-6 text-white mt-28 md:mt-32">Fisika 2</h1>
 
-      {/* Dropdown to select chapter */}
       <div className="mb-6">
         <select
           value={selectedChapter}
@@ -82,21 +78,17 @@ export default function FisikaPage() {
       </div>
 
       <div className="space-y-4 w-full">
-        {/* Display PDFs for selected chapter */}
         {pdfData[selectedChapter]?.map((pdf, index) => (
           <div key={index} className="p-4 rounded-md shadow-lg bg-white">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold text-gray-800">{pdf.title}</h2>
               <div className="space-x-4">
-                {/* Preview Button */}
                 <button
                   onClick={() => openModal(pdf.previewUrl)}
                   className="btn btn-primary btn-sm"
                 >
                   Preview
                 </button>
-
-                {/* Download Button */}
                 <a
                   href={pdf.downloadUrl}
                   target="_blank"
