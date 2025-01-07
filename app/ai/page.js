@@ -40,7 +40,7 @@ export default function AI() {
     <main className="flex items-center justify-center min-h-screen px-4 sm:px-0 bg-cover bg-center bg-[url('/images/space.png')]">
       <div className="flex flex-col justify-between w-full max-w-2xl h-full shadow-lg overflow-hidden mt-0 sm:w-full lg:w-full bg-gray-800 text-white rounded-lg">
         <div className="p-4 bg-violet-700 text-white text-xl font-semibold animate-fade-down">
-          <span>Chat with KAORI AI</span>
+          <span>Chat with AI</span>
         </div>
 
         <div className="flex-1 p-6 space-y-6 overflow-y-auto max-h-[70vh] min-h-[300px] flex flex-col justify-start">

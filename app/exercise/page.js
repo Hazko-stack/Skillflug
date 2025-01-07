@@ -4,63 +4,118 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const ExercisePage = () => {
-  const [category, setCategory] = useState('22'); 
+  const [category, setCategory] = useState('biology'); // Default category
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [isCorrect, setIsCorrect] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [newPokemon, setNewPokemon] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
-  const difficulty = 'easy'; 
-
-  const fetchQuestionsFromAPI = async (selectedCategory) => {
-    setLoading(true); 
-    setQuestions([]); 
-    setCurrentQuestionIndex(0); 
-    try {
-      console.log(`Fetching questions for category: ${selectedCategory}`);
-      const response = await fetch(
-        `https://opentdb.com/api.php?amount=10${selectedCategory ? `&category=${selectedCategory}` : ''}&difficulty=${difficulty}&type=multiple`
-      );
-
-      if (!response.ok) {
-        throw new Error('Failed to fetch questions');
+  // Hardcoded questions for Biology, Geography, and History
+  const questionBank = {
+    biology: [
+      {
+        question: "What is the powerhouse of the cell?",
+        options: ["Nucleus", "Mitochondria", "Ribosome", "Chloroplast"],
+        answer: "Mitochondria"
+      },
+      {
+        question: "What is the chemical symbol for water?",
+        options: ["H2O", "CO2", "O2", "H2O2"],
+        answer: "H2O"
+      },
+      {
+        question: "Which organ is responsible for pumping blood?",
+        options: ["Lungs", "Kidneys", "Heart", "Brain"],
+        answer: "Heart"
+      },
+      {
+        question: "Which of these is a type of muscle tissue?",
+        options: ["Epithelial", "Skeletal", "Nervous", "Connective"],
+        answer: "Skeletal"
+      },
+      {
+        question: "What is the process by which plants make their own food?",
+        options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"],
+        answer: "Photosynthesis"
       }
-
-      const data = await response.json();
-      console.log('API Response:', data); 
-
-      if (!data.results || data.results.length === 0) {
-        console.warn('No questions available for the selected category and difficulty.');
-        setQuestions([]);
-        return;
+    ],
+    geography: [
+      {
+        question: "Which is the largest continent by area?",
+        options: ["Africa", "Asia", "Europe", "Antarctica"],
+        answer: "Asia"
+      },
+      {
+        question: "What is the capital city of France?",
+        options: ["Rome", "Madrid", "Paris", "Berlin"],
+        answer: "Paris"
+      },
+      {
+        question: "What is the longest river in the world?",
+        options: ["Amazon", "Nile", "Yangtze", "Mississippi"],
+        answer: "Nile"
+      },
+      {
+        question: "Which country is known as the Land of the Rising Sun?",
+        options: ["China", "Japan", "South Korea", "India"],
+        answer: "Japan"
+      },
+      {
+        question: "Mount Everest is located in which mountain range?",
+        options: ["Andes", "Himalayas", "Rockies", "Alps"],
+        answer: "Himalayas"
       }
-
-      const formattedQuestions = data.results.map((question) => {
-        const allOptions = [...question.incorrect_answers, question.correct_answer];
-        return {
-          question: question.question,
-          options: allOptions.sort(() => Math.random() - 0.5), 
-          answer: question.correct_answer,
-        };
-      });
-
-      setQuestions(formattedQuestions);
-      setIsCorrect(null); 
-    } catch (error) {
-      console.error('Error fetching questions:', error);
-      setQuestions([]);
-    } finally {
-      setLoading(false); 
-    }
+    ],
+    history: [
+      {
+        question: "Who was the first President of the United States?",
+        options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"],
+        answer: "George Washington"
+      },
+      {
+        question: "In what year did World War II end?",
+        options: ["1941", "1945", "1939", "1950"],
+        answer: "1945"
+      },
+      {
+        question: "Who discovered America?",
+        options: ["Christopher Columbus", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"],
+        answer: "Christopher Columbus"
+      },
+      {
+        question: "What ancient civilization built the pyramids?",
+        options: ["Roman", "Greek", "Mayan", "Egyptian"],
+        answer: "Egyptian"
+      },
+      {
+        question: "Who was the first woman to fly solo across the Atlantic Ocean?",
+        options: ["Amelia Earhart", "Harriet Tubman", "Sally Ride", "Bessie Coleman"],
+        answer: "Amelia Earhart"
+      }
+    ]
   };
 
+  const difficulty = 'easy'; // We can keep this for now, as we're using fixed questions
+
+  // Set questions based on selected category
   useEffect(() => {
     if (category) {
-      fetchQuestionsFromAPI(category);
+      setLoading(true);
+      const selectedQuestions = questionBank[category];
+      setQuestions(selectedQuestions || []);
+      setCurrentQuestionIndex(0);
+      setIsCorrect(null);
+      setLoading(false);
     }
   }, [category]);
+
+  // Handle category change
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    setCategory(selectedCategory);
+  };
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === questions[currentQuestionIndex].answer) {
@@ -112,12 +167,12 @@ const ExercisePage = () => {
         <select
           id="category"
           value={category}
-          onChange={(e) => {
-            setCategory(e.target.value);
-          }}
+          onChange={handleCategoryChange}
           className="border rounded p-2"
         >
-          <option value="22">Geography</option>
+          <option value="biology">Biology</option>
+          <option value="geography">Geography</option>
+          <option value="history">History</option>
         </select>
       </div>
 
