@@ -12,14 +12,16 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ['Bilyalared', 'sans-serif'], // Ganti default 'sans' menjadi Bilyalared
+        bilya: ['Bilyalayeredbase'], 
+        montserrat: ['Montserrat', 'sans-serif'], // Tambahkan Montserrat
       },
       backgroundImage: {
         'wave': "url('/images/space.png')",
       },
     },
   },
-  plugins: [require("daisyui"),
+  plugins: [
+    require("daisyui"),
     require('tailwindcss-animated'),
     require('tailwindcss-motion'),
   ],

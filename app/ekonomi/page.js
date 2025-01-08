@@ -120,7 +120,7 @@ export default function EkonomiPage() {
           <div key={index} className="p-4 rounded-md shadow-lg bg-white">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold text-gray-800">{pdf.title}</h2>
-              <div className="space-x-4">
+              <div className="flex flex-wrap gap-2 justify-end">
                 <button
                   onClick={() => openModal(pdf.previewUrl)}
                   className="btn btn-primary btn-sm"
@@ -150,7 +150,7 @@ export default function EkonomiPage() {
             >
               X
             </button>
-            <h2 className="text-2xl ">PDF Preview</h2>
+            <h2 className="text-2xl text-indigo-950">PDF Preview</h2>
             <div className="pdf-preview-container">
               <iframe
                 src={pdfUrl}

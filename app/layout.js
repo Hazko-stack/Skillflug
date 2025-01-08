@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from 'next/image';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 // Load the Inter font
 const inter = Inter({ subsets: ["latin"] });
@@ -19,17 +21,25 @@ export default function RootLayout({ children }) {
           className="lg:w-1/5 w-full fixed top-0 left-0 h-full bg-cover bg-center z-50 shadow-md lg:flex flex-col hidden"
           style={{ backgroundImage: "url('/images/sidebar.png')" }}
         >
-      <div className="navbar-start p-4">
-  <Link href="/" className="text-2xl font-bold flex">
-    <span className="text-amber-500">NEXT</span>
-    <span className="text-white text-xl ml-1">GEN LEARN</span>
-  </Link>
-</div>
+          
+        <div className="navbar-start p-4 relative w-full h-24">
+        <Link href="/" className="block w-full h-full">
+          <Image 
+            src="/images/logo.PNG" 
+            alt="Skillflug Logo" 
+            fill
+            className="object-contain"
+          />
+        </Link>
+        </div>
+
+
+
 <div className="navbar-center flex flex-col p-4 space-y-4 text-lg">
   {/* Menu with icons */}
   <Link
     href="/"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-montserrat font-semibold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +59,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/ai"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-montserrat font-semibold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +79,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/lesson"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-montserrat font-semibold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +99,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/task"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-montserrat font-semibold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +119,7 @@ export default function RootLayout({ children }) {
   </Link>
   <Link
     href="/exercise"
-    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-bold"
+    className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-montserrat font-semibold"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -128,11 +138,10 @@ export default function RootLayout({ children }) {
     Exercise
   </Link>
 </div>
- </div>
+</div>
 
         
         <div className="flex-1 lg:ml-[20%] w-full">{children}</div>
-        {/* Mobile Floating Bottom Navigation */}
         <div className="lg:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
           <div className="bg-white/80 backdrop-blur-md rounded-full shadow-lg p-2">
             <ul className="flex space-x-6 justify-center items-center">
@@ -176,7 +185,6 @@ export default function RootLayout({ children }) {
                   </svg>
                 </Link>
               </li>
-              {/* AI Menu for Mobile */}
               <li>
                 <Link
                   href="/ai"
@@ -199,7 +207,6 @@ export default function RootLayout({ children }) {
                   </svg>
                 </Link>
               </li>
-              {/* Lessons Menu for Mobile */}
               <li>
                 <Link
                   href="/lesson"

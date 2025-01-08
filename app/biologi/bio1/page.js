@@ -62,7 +62,7 @@ export default function BiologiPage() {
       className="min-h-screen flex flex-col items-center py-4 px-8 bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/space.png)' }}
     >
-      <h1 className="text-3xl mb-6 text-violet-900 font-bold ">Biologi 1</h1>
+      <h1 className="text-3xl mb-6 text-indigo-950 font-bold ">Biologi 1</h1>
 
       <div className="mb-6">
         <select
@@ -81,7 +81,7 @@ export default function BiologiPage() {
           <div key={index} className="p-4 rounded-md shadow-lg bg-white">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold text-gray-800">{pdf.title}</h2>
-              <div className="space-x-4">
+              <div className="flex flex-wrap gap-2 justify-end">
                 <button
                   onClick={() => openModal(pdf.previewUrl)}
                   className="btn btn-primary btn-sm"
@@ -102,7 +102,6 @@ export default function BiologiPage() {
         ))}
       </div>
 
-      {/* Modal for PDF preview */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center">
           <div className="bg-white p-6 rounded-lg max-w-3xl w-full md:w-2/3 lg:w-1/2">
@@ -112,13 +111,12 @@ export default function BiologiPage() {
             >
               X
             </button>
-            <h2 className="text-2xl ">PDF Preview</h2>
+            <h2 className="text-2xl text-indigo-950">PDF Preview</h2>
             <div className="pdf-preview-container">
-              {/* iframe with reduced size and scrolling */}
               <iframe
                 src={pdfUrl}
                 width="100%"
-                height="300px"  // Reduced height
+                height="300px"  
                 frameBorder="0"
                 title="PDF Preview"
               />

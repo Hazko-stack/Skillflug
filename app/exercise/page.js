@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const ExercisePage = () => {
-  const [category, setCategory] = useState('biology'); // Default category
+  const [category, setCategory] = useState('biology'); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [isCorrect, setIsCorrect] = useState(null);
@@ -12,7 +12,6 @@ const ExercisePage = () => {
   const [newPokemon, setNewPokemon] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
-  // Hardcoded questions for Biology, Geography, and History
   const questionBank = {
     biology: [
       {
@@ -97,9 +96,6 @@ const ExercisePage = () => {
     ]
   };
 
-  const difficulty = 'easy'; // We can keep this for now, as we're using fixed questions
-
-  // Set questions based on selected category
   useEffect(() => {
     if (category) {
       setLoading(true);
@@ -111,7 +107,6 @@ const ExercisePage = () => {
     }
   }, [category]);
 
-  // Handle category change
   const handleCategoryChange = (e) => {
     const selectedCategory = e.target.value;
     setCategory(selectedCategory);
@@ -158,7 +153,7 @@ const ExercisePage = () => {
       className="min-h-screen bg-cover bg-center flex flex-col items-center p-4"
       style={{ backgroundImage: "url('/images/space.png')" }}
     >
-      <h1 className="text-3xl font-bold mb-4 text-indigo-950">Pokémon Exercise</h1>
+      <h1 className="text-3xl font-bold mb-4 text-indigo-950 -motion-translate-x-in-100 motion-translate-y-in-75">Pokémon Exercise</h1>
 
       <div className="mb-4">
         <label htmlFor="category" className="mr-2 font-bold text-indigo-950">

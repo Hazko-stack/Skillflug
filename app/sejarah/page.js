@@ -108,7 +108,7 @@ export default function SejarahPage() {
         backgroundPosition: 'center',
       }}
     >
-      <h1 className="text-3xl mb-6 text-violet-900 ">Sejarah Materi</h1>
+      <h1 className="text-3xl mb-6 text-indigo-950 font-bold ">Sejarah Materi</h1>
       <div className="mb-6 w-full max-w-xs">
         <input
           type="text"
@@ -125,7 +125,7 @@ export default function SejarahPage() {
             <div key={index} className="p-4 rounded-md shadow-lg bg-white">
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-semibold text-gray-800">{pdf.title}</h2>
-                <div className="space-x-4">
+                <div className="flex flex-wrap gap-2 justify-end">
                   <button
                     onClick={() => openModal(pdf.previewUrl)}
                     className="btn btn-primary btn-sm"
@@ -158,7 +158,7 @@ export default function SejarahPage() {
             >
               X
             </button>
-            <h2 className="text-2xl">PDF Preview</h2>
+            <h2 className="text-2xl text-indigo-950">PDF Preview</h2>
             <div className="pdf-preview-container">
               <iframe
                 src={pdfUrl}
