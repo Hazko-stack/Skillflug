@@ -16,40 +16,143 @@ const ExercisePage = () => {
   const questionBank = {
     biology: {
       1: [
-        { question: "What is the powerhouse of the cell?", options: ["Nucleus", "Mitochondria", "Ribosome", "Chloroplast"], answer: "Mitochondria" },
-        { question: "What is the chemical symbol for water?", options: ["H2O", "CO2", "O2", "H2O2"], answer: "H2O" },
+        { question: "Berikut merupakan filum dari kingdom Animalia, kecuali", options: ["Athropoda", "Mollusca", "Bryophyta", "Chordata"], answer: "Bryophyta" },
+        { question: "Crustacea merupakan subfilum dari filum...", options: ["Chordata", "Athropoda", "Echinodermata", "Mollusca"], answer: "Athropoda" },
+        { question: "Asteroidea merupakan anggota dari filum...", options: ["Mollusca", "Athropoda", "Vermes", "Echinodermata"], answer: "Echinodermata" },
       ],
       2: [
-        { question: "Which organ is responsible for pumping blood?", options: ["Lungs", "Kidneys", "Heart", "Brain"], answer: "Heart" },
+        { question: "Apa organella yang disebut dengan 'the powerhouse of the cell'", options: ["Nukleus", "Mitokondria", "Ribosom", "Kloroplas"], answer: "Mitokondria" },
         { question: "Which of these is a type of muscle tissue?", options: ["Epithelial", "Skeletal", "Nervous", "Connective"], answer: "Skeletal" },
+        { question: "C6H12O6 merupakan rumus kimia dari...", options: ["Monosakarida", "Protein", "Lemak", "Polisakarida"], answer: "Monosakarida" },
       ],
       3: [
-        { question: "What is the process by which plants make their own food?", options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"], answer: "Photosynthesis" },
+        { question: "Organ mana yang bertanggung jawab untuk memompa darah?", options: ["Paru-paru", "Ginjal", "Jantung", "Otak"], answer: "Jantung" },
+        { question: "Apa proses yang membuat tanaman dapat membuat makanannya sendiri?", options: ["Respirasi", "Fotosintesis", "Pencernaan", "Eksresi"], answer: "Fotosintesis" },
+        { question: "kelenjar apa yang menghasilkan hormon melatonin?", options: ["Adrenal", "Hipofisis", "Timus", "Pineal"], answer: "" },
       ],
     },
     geography: {
       1: [
         { question: "Which is the largest continent by area?", options: ["Africa", "Asia", "Europe", "Antarctica"], answer: "Asia" },
         { question: "What is the capital city of France?", options: ["Rome", "Madrid", "Paris", "Berlin"], answer: "Paris" },
+        { question: "", options: ["", "", "", ""], answer: "" },
       ],
       2: [
         { question: "What is the longest river in the world?", options: ["Amazon", "Nile", "Yangtze", "Mississippi"], answer: "Nile" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
       ],
       3: [
         { question: "Mount Everest is located in which mountain range?", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
       ],
     },
     history: {
       1: [
         { question: "Who was the first President of the United States?", options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], answer: "George Washington" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
       ],
       2: [
-        { question: "In what year did World War II end?", options: ["1941", "1945", "1939", "1950"], answer: "1945" },
+        { question: "Pada tahun berapa perang dunia II berakhir?", options: ["1941", "1945", "1939", "1950"], answer: "1945" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
       ],
       3: [
-        { question: "Who discovered America?", options: ["Christopher Columbus", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"], answer: "Christopher Columbus" },
+        { question: "Siapa yang menemukan benua Amerika?", options: ["Christopher Columbus", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"], answer: "Christopher Columbus" }, 
+        //the vikings actually discovered the americas a couple hundred years before columbus did
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
       ],
     },
+    chem: {
+      1: [
+        { question: "Apa rumus kimia untuk air?", options: ["H2O", "CO2", "O2", "H2O2"], answer: "H2O" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      2: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      3: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+    },
+    physic: {
+      1: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      2: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      3: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+    },
+    economy: {
+      1: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      2: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      3: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+    },
+    bahasa: {
+      1: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      2: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      3: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+    },
+    math: {
+      1: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      2: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+      3: [
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "", options: ["", "", "", ""], answer: "" },
+      ],
+    },
+    
   };
 
   useEffect(() => {
@@ -111,12 +214,20 @@ const ExercisePage = () => {
     <div className="min-h-screen bg-cover bg-center flex flex-col items-center p-4" style={{ backgroundImage: "url('/images/space.png')" }}>
       <h1 className="text-3xl font-bold mb-4 text-indigo-950">Pokémon Exercise</h1>
 
+
+  //add shit to work
+
       <div className="mb-4">
         <label htmlFor="category" className="mr-2 font-bold text-indigo-950">Choose Category:</label>
         <select id="category" value={category} onChange={handleCategoryChange} className="border rounded p-2">
-          <option value="biology">Biology</option>
-          <option value="geography">Geography</option>
-          <option value="history">History</option>
+          <option value="biology">Biologi</option>
+          <option value="chem">Kimia</option>
+          <option value="physics">Fisika</option>
+          <option value="math">Matematika</option>
+          <option value="economy">Ekonomi</option>
+          <option value="bahasa">Bahasa</option>
+          <option value="geography">Geografi</option>
+          <option value="history">Sejarah</option>
         </select>
       </div>
 
