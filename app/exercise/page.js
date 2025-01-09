@@ -21,8 +21,8 @@ const ExercisePage = () => {
         { question: "Asteroidea merupakan anggota dari filum...", options: ["Mollusca", "Athropoda", "Vermes", "Echinodermata"], answer: "Echinodermata" },
       ],
       2: [
-        { question: "Apa organella yang disebut dengan 'the powerhouse of the cell'", options: ["Nukleus", "Mitokondria", "Ribosom", "Kloroplas"], answer: "Mitokondria" },
-        { question: "Which of these is a type of muscle tissue?", options: ["Epithelial", "Skeletal", "Nervous", "Connective"], answer: "Skeletal" },
+        { question: "Apa organella yang disebut dengan 'the powerhouse of the cell'?", options: ["Nukleus", "Mitokondria", "Ribosom", "Kloroplas"], answer: "Mitokondria" },
+        { question: "Berikut yang merupakan jenis jaringan otot...", options: ["Epitel", "Skeletal", "Saraf", "Konektif"], answer: "Skeletal" },
         { question: "C6H12O6 merupakan rumus kimia dari...", options: ["Monosakarida", "Protein", "Lemak", "Polisakarida"], answer: "Monosakarida" },
       ],
       3: [
@@ -33,19 +33,19 @@ const ExercisePage = () => {
     },
     geography: {
       1: [
-        { question: "Which is the largest continent by area?", options: ["Africa", "Asia", "Europe", "Antarctica"], answer: "Asia" },
-        { question: "What is the capital city of France?", options: ["Rome", "Madrid", "Paris", "Berlin"], answer: "Paris" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Benua apa yang memiliki wilayah paling luas?", options: ["Africa", "Asia", "Europe", "Antarctica"], answer: "Asia" },
+        { question: "Apa ibu kota Perancis?", options: ["Rome", "Madrid", "Paris", "Berlin"], answer: "Paris" },
+        { question: "Konsep yang menggambarkan kecenderungan suatu pola untuk mengelompok merupakan prinsip geografi yakni", options: ["Aglomerasi", "Morfologi", "Interaksi", "Keterjangkauan"], answer: "Aglomerasi" },
       ],
       2: [
-        { question: "What is the longest river in the world?", options: ["Amazon", "Nile", "Yangtze", "Mississippi"], answer: "Nile" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Apa nama sungai terpanjang di dunia?", options: ["Amazon", "Nile", "Yangtze", "Mississippi"], answer: "Nile" },
+        { question: "Curah hujan yang mengalir di permukaan tanah juga disebut dengan...", options: ["", "", "", "Run-off"], answer: "" },
         { question: "", options: ["", "", "", ""], answer: "" },
       ],
       3: [
-        { question: "Mount Everest is located in which mountain range?", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Gunung Everest terletak di pegunungan...", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
+        { question: "Yang bukan merupakan dasar penggolongan hutan..", options: ["Asal", "Iklim", "Hewan", "Letak"], answer: "Hewan" },
+        { question: "Yang bukan merupakan bioma...", options: ["Gurun", "Taiga", "Sabana", ""], answer: "" },
       ],
     },
     history: {
