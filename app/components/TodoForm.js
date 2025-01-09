@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import DOMPurify from "dompurify";  // Import DOMPurify
+import DOMPurify from "dompurify";  
 
 export default function TodoForm({ addTodo }) {
   const [task, setTask] = useState("");
@@ -8,12 +8,11 @@ export default function TodoForm({ addTodo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.trim()) {
-      // Sanitasi input sebelum menambahkannya ke daftar tugas
       const sanitizedTask = DOMPurify.sanitize(task);
 
       addTodo({
         id: Date.now(),
-        text: sanitizedTask,  // Gunakan task yang sudah disanitasi
+        text: sanitizedTask,  
       });
       setTask("");
     }

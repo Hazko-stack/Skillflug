@@ -3,8 +3,9 @@ import "./globals.css";
 import Link from "next/link";
 import Image from 'next/image';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
-// Load the Inter font
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,7 +17,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} flex min-h-screen`}>
-        {/* Sidebar for Desktop */}
         <div
           className="lg:w-1/5 w-full fixed top-0 left-0 h-full bg-cover bg-center z-50 shadow-md lg:flex flex-col hidden"
           style={{ backgroundImage: "url('/images/sidebar.png')" }}
@@ -36,7 +36,6 @@ export default function RootLayout({ children }) {
 
 
 <div className="navbar-center flex flex-col p-4 space-y-4 text-lg">
-  {/* Menu with icons */}
   <Link
     href="/"
     className="group flex items-center hover:bg-white hover:text-violet-600 p-3 rounded-lg transition duration-200 font-montserrat font-semibold"
@@ -255,6 +254,7 @@ export default function RootLayout({ children }) {
           </div>
         </div>
         <SpeedInsights />
+        <Analytics/>
       </body>
     </html>
   );
