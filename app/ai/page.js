@@ -73,6 +73,7 @@ export default function AI() {
             id="content"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
+            autoComplete="off"
             placeholder="Ask me something..."
             className="border border-gray-600 bg-gray-800 text-white rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-violet-400"
           />
