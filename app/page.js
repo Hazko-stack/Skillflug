@@ -8,7 +8,7 @@ export default function Home() {
       className="relative h-screen flex flex-col justify-between items-start pt-4 pl-10 bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/space.png)' }}
     >
-      <div className="absolute top-20 left-10 pt- animate-fade-right">
+      <div className="absolute top-20 left-10 pt- animate-fade-right ">
         <h1 className="text-4xl sm:text-5xl md:text-4xl font-montserrat font-extrabold text-violet-500">
           I AM LEARNING WITH
         </h1>
@@ -21,7 +21,7 @@ export default function Home() {
         <img
           src="/images/planet.png"
           alt="Planet"
-          className="w-1/2 h-auto animate-pulse"
+          className="w-1/2 h-auto"
         />
       </div>
 
