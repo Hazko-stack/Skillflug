@@ -13,6 +13,7 @@ const ExercisePage = () => {
   const [newPokemon, setNewPokemon] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
+  //quite a chore to fill T_T
   const questionBank = {
     biology: {
       1: [
@@ -38,9 +39,9 @@ const ExercisePage = () => {
         { question: "Konsep yang menggambarkan kecenderungan suatu pola untuk mengelompok merupakan prinsip geografi yakni", options: ["Aglomerasi", "Morfologi", "Interaksi", "Keterjangkauan"], answer: "Aglomerasi"},
       ],
       2: [
-        { question: "Apa nama sungai terpanjang di dunia?", options: ["Amazon", "Nile", "Yangtze", "Mississippi"], answer: "Nile" },
+        { question: "Apa nama sungai terpanjang di dunia?", options: ["Amazon", "Nil", "Yangtze", "Mississippi"], answer: "Nil" },
         { question: "Curah hujan yang mengalir di permukaan tanah juga disebut dengan...", options: ["Danau", "Sungai", "Badai", "Run-off"], answer: "Run-off" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Yang bukan merupakan lapisan atmosfer...", options: ["stratosfer", "Troposfer", "Biosfer", "Mesosfer"], answer: "biosfer" },
       ],
       3: [
         { question: "Gunung Everest terletak di pegunungan...", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
@@ -50,38 +51,37 @@ const ExercisePage = () => {
     },
     history: {
       1: [
-        { question: "Who was the first President of the United States?", options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], answer: "George Washington" },
-        { question:"Kapan era kejayaan sang Alexander Agung", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Siapa Presiden Amerika Serikat yang pertama?", options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], answer: "George Washington" },
+        { question:"Alat-alat dari zaman batu tua disebut juga sebagai...", options: ["Paleolitikum", "Neolitikum", "Megalitikum", "Mesolitikum"], answer: "Paleolitikum" },
+        { question: "Zaman prasejarah diakhiri dengan ditemukannya..", options: ["Api", "Roda", "Pertanian", "Tulisan"], answer: "Tulisan" },
       ],
       2: [
         { question: "Pada tahun berapa perang dunia II berakhir?", options: ["1941", "1945", "1939", "1950"], answer: "1945" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Siapa negara pertama yang menjajah Indonesia?", options: ["Inggris", "Portugis", "Spanyol", "Jepang"], answer: "Portugis" },
+        { question: "Selama berapa tahun Belanda menjajah Indonesia?", options: ["150", "250", "300", "350"], answer: "350" },
       ],
       3: [
         { question: "Siapa yang menemukan benua Amerika?", options: ["Christopher Columbus", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"], answer: "Christopher Columbus" }, 
         //the vikings actually discovered the americas a couple hundred years before columbus did
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Aliansi militer yang dibentuk Blok Barat adalah?", options: ["NATO", "COMECON", "SEACO", "PBB"], answer: "NATO" },
+        { question: "Krisis Rudal Kuba terjadi pada tahun?", options: ["1989", "1945", "1991", "1962"], answer: "1962" },
       ],
     },
     chem: {
       1: [
         { question: "Apa rumus kimia untuk air?", options: ["H2O", "CO2", "O2", "H2O2"], answer: "H2O" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Partikel terkecil penyusun senyawa adalah...", options: ["Molekul", "Atom", "Proton", "Ion"], answer: "Molekul" },
+        { question: "Atom yang memiliki jumlah proton sebanyak 11 adalah atom...", options: ["Pb", "Na", "Ca", "C"], answer: "Na" },
       ],
       2: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Proses yang terjadi pada anoda dalam sel elektrokimia adalah:", options: ["Reduksi", "Oksidasi", "Induksi", "Ionisasi"], answer: "Oksidasi" },
+        { question: "Ion yang menuju katoda dalam elektrolisis adalah:", options: ["Anion", "Kation", "Neutron", "Elektron"], answer: "Kation" },
+        { question: "Prinsip yang digunakan untuk mengubah posisi kesetimbangan disebut hukum…", options: ["Avogadro", "Dalton", "Boyle", "Le Chatelier"], answer: "Le Chatelier" },
       ],
       3: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Larutan yang bersifat asam memiliki pH...", options: ["0-7", "7", "7-14", "14"], answer: "7" },
+        { question: "Zat berikut yang bersifat basa adalah...", options: ["HCL", "NaOH", "H2SO4", "CO2"], answer: "NaOH" },
+        { question: "Unsur berikut yang termasuk logam alkali tanah adalah...", options: ["Li", "Ba", "Ca", "Ne"], answer: "Ca" },
       ],
     },
     physic: {
@@ -137,19 +137,19 @@ const ExercisePage = () => {
     },
     math: {
       1: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Jika f(x)=3x-2, maka f(2) adalah", options: ["3", "4", "6", "10"], answer: "4" },
+        { question: "Jika f(x)=2x+3, maka f(4) adalah", options: ["10", "13", "11", "16"], answer: "11" },
+        { question: "Jika f(x)=4x-8, maka f(5) adalah", options: ["12", "16", "10", ""20], answer: "12" },
       ],
       2: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Jika  segitiga sama kaki memiliki panjang sisi alas 6x dan tinggi 8x, maka luas segitiga adalah", options: ["24x", "18x", "12x", "48x"], answer: "24x" },
+        { question: "Nilai dari tan 45 derajat adalah..", options: ["0", "1", "0,5", "infinite"], answer: "1" },
+        { question: "Jika sin x adalah 3/5, maka cos x adalah", options: ["4/5", "3/5", "5/3", "5/4"], answer: "4/5" },
       ],
       3: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Panjang jari-jari lingkaran adalah 10 cm. Berapakah panjang diameter?", options: ["5cm", "10cm", "15cm", "20cm"], answer: "20cm" },
+        { question: "Luas lingkaran dengan jari-jari 7x", options: ["49x", "154x", "14x", "77x"], answer: "49x" },
+        { question: "Jika diketahui Chord 20 cm & jarak ke pusat 6 cm. Berapa panjang jari-jari lingkaran", options: ["12cm", "13cm", "14cm", "15cm"], answer: "13cm" },
       ],
     },
     
@@ -216,7 +216,6 @@ const ExercisePage = () => {
 
 
   //add shit to work
-
       <div className="mb-4">
         <label htmlFor="category" className="mr-2 font-bold text-indigo-950">Choose Category:</label>
         <select id="category" value={category} onChange={handleCategoryChange} className="border rounded p-2">
