@@ -1,5 +1,4 @@
-"use client"; 
-
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -8,7 +7,7 @@ export default function Home() {
       className="relative h-screen flex flex-col justify-between items-start pt-4 pl-10 bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/space.png)' }}
     >
-      <div className="absolute top-20 left-10 pt- animate-fade-right ">
+      <div className="absolute top-20 left-10 pt- animate-fade-right">
         <h1 className="text-4xl sm:text-5xl md:text-4xl font-montserrat font-extrabold text-violet-500">
           I AM LEARNING WITH
         </h1>
@@ -18,10 +17,12 @@ export default function Home() {
       </div>
 
       <div className="block sm:hidden absolute inset-0 flex justify-center items-center">
-        <img
+        <Image
           src="/images/planet.png"
           alt="Planet"
-          className="w-1/2 h-auto"
+          width={400} 
+          height={400}
+          priority 
         />
       </div>
 
