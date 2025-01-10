@@ -25,7 +25,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="hidden sm:block absolute bottom-20 left-10 text-left text-violet-600 font-bold -motion-translate-x-in-100 motion-translate-y-in-75">
+      <div className="hidden sm:block absolute bottom-20 left-10 text-left text-violet-600 font-bold animate-fade-right">
         <p className="text-4xl underline font-montserrat font-semibold italic">Quote of the Day</p>
         <p className="mt-2 text-xl italic font-montserrat font-semibold">Don't rush the process,</p>
         <p className="mt-1 text-xl italic font-montserrat font-semibold">good things take time.</p>
