@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Skillflug",
-  description: "by Unnoticed Concuerors",
+  description: "by Unnoticed Concuerors Team",
 };
 
 export default function RootLayout({ children }) {

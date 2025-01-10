@@ -12,8 +12,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        bilya: ['Bilyalayeredbase'], 
-        montserrat: ['Montserrat', 'sans-serif'], // Tambahkan Montserrat
+        bilya: ['Bilyalayeredbase', 'sans-serif'], 
+        montserrat: ['Montserrat', 'sans-serif'], 
       },
       backgroundImage: {
         'wave': "url('/images/space.png')",
