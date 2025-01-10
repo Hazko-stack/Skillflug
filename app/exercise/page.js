@@ -13,43 +13,129 @@ const ExercisePage = () => {
   const [newPokemon, setNewPokemon] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
+  //quite a chore to fill T_T
   const questionBank = {
     biology: {
       1: [
-        { question: "What is the powerhouse of the cell?", options: ["Nucleus", "Mitochondria", "Ribosome", "Chloroplast"], answer: "Mitochondria" },
-        { question: "What is the chemical symbol for water?", options: ["H2O", "CO2", "O2", "H2O2"], answer: "H2O" },
+        { question: "Berikut merupakan filum dari kingdom Animalia, kecuali", options: ["Athropoda", "Mollusca", "Bryophyta", "Chordata"], answer: "Bryophyta" },
+        { question: "Crustacea merupakan subfilum dari filum...", options: ["Chordata", "Athropoda", "Echinodermata", "Mollusca"], answer: "Athropoda" },
+        { question: "Asteroidea merupakan anggota dari filum...", options: ["Mollusca", "Athropoda", "Vermes", "Echinodermata"], answer: "Echinodermata" },
       ],
       2: [
-        { question: "Which organ is responsible for pumping blood?", options: ["Lungs", "Kidneys", "Heart", "Brain"], answer: "Heart" },
-        { question: "Which of these is a type of muscle tissue?", options: ["Epithelial", "Skeletal", "Nervous", "Connective"], answer: "Skeletal" },
+        { question: "Apa organella yang disebut dengan 'the powerhouse of the cell'?", options: ["Nukleus", "Mitokondria", "Ribosom", "Kloroplas"], answer: "Mitokondria" },
+        { question: "Berikut yang merupakan jenis jaringan otot...", options: ["Epitel", "Skeletal", "Saraf", "Konektif"], answer: "Skeletal" },
+        { question: "C6H12O6 merupakan rumus kimia dari...", options: ["Monosakarida", "Protein", "Lemak", "Polisakarida"], answer: "Monosakarida" },
       ],
       3: [
-        { question: "What is the process by which plants make their own food?", options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"], answer: "Photosynthesis" },
+        { question: "Organ mana yang bertanggung jawab untuk memompa darah?", options: ["Paru-paru", "Ginjal", "Jantung", "Otak"], answer: "Jantung" },
+        { question: "Apa proses yang membuat tanaman dapat membuat makanannya sendiri?", options: ["Respirasi", "Fotosintesis", "Pencernaan", "Eksresi"], answer: "Fotosintesis" },
+        { question: "kelenjar apa yang menghasilkan hormon melatonin?", options: ["Adrenal", "Hipofisis", "Timus", "Pineal"], answer: "Pineal" },
       ],
     },
     geography: {
       1: [
-        { question: "Which is the largest continent by area?", options: ["Africa", "Asia", "Europe", "Antarctica"], answer: "Asia" },
-        { question: "What is the capital city of France?", options: ["Rome", "Madrid", "Paris", "Berlin"], answer: "Paris" },
+        { question: "Benua apa yang memiliki wilayah paling luas?", options: ["Afrika", "Asia", "Eropa", "Antartika"], answer: "Asia" },
+        { question: "Apa ibu kota Perancis?", options: ["Rome", "Madrid", "Paris", "Berlin"], answer: "Paris" },
+        { question: "Konsep yang menggambarkan kecenderungan suatu pola untuk mengelompok merupakan prinsip geografi yakni", options: ["Aglomerasi", "Morfologi", "Interaksi", "Keterjangkauan"], answer: "Aglomerasi"},
       ],
       2: [
-        { question: "What is the longest river in the world?", options: ["Amazon", "Nile", "Yangtze", "Mississippi"], answer: "Nile" },
+        { question: "Apa nama sungai terpanjang di dunia?", options: ["Amazon", "Nil", "Yangtze", "Mississippi"], answer: "Nil" },
+        { question: "Curah hujan yang mengalir di permukaan tanah juga disebut dengan...", options: ["Danau", "Sungai", "Badai", "Run-off"], answer: "Run-off" },
+        { question: "Yang bukan merupakan lapisan atmosfer...", options: ["stratosfer", "Troposfer", "Biosfer", "Mesosfer"], answer: "biosfer" },
       ],
       3: [
-        { question: "Mount Everest is located in which mountain range?", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
+        { question: "Gunung Everest terletak di pegunungan...", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
+        { question: "Yang bukan merupakan dasar penggolongan hutan..", options: ["Asal", "Iklim", "Hewan", "Letak"], answer: "Hewan" },
+        { question: "Yang bukan merupakan bioma...", options: ["Gurun", "Taiga", "Sabana", "Peninsula"], answer: "Peninsula" },
       ],
     },
     history: {
       1: [
-        { question: "Who was the first President of the United States?", options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], answer: "George Washington" },
+        { question: "Siapa Presiden Amerika Serikat yang pertama?", options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], answer: "George Washington" },
+        { question:"Alat-alat dari zaman batu tua disebut juga sebagai...", options: ["Paleolitikum", "Neolitikum", "Megalitikum", "Mesolitikum"], answer: "Paleolitikum" },
+        { question: "Zaman prasejarah diakhiri dengan ditemukannya..", options: ["Api", "Roda", "Pertanian", "Tulisan"], answer: "Tulisan" },
       ],
       2: [
-        { question: "In what year did World War II end?", options: ["1941", "1945", "1939", "1950"], answer: "1945" },
+        { question: "Pada tahun berapa perang dunia II berakhir?", options: ["1941", "1945", "1939", "1950"], answer: "1945" },
+        { question: "Siapa negara pertama yang menjajah Indonesia?", options: ["Inggris", "Portugis", "Spanyol", "Jepang"], answer: "Portugis" },
+        { question: "Selama berapa tahun Belanda menjajah Indonesia?", options: ["150", "250", "300", "350"], answer: "350" },
       ],
       3: [
-        { question: "Who discovered America?", options: ["Christopher Columbus", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"], answer: "Christopher Columbus" },
+        { question: "Siapa yang menemukan benua Amerika?", options: ["Christopher Columbus", "Marco Polo", "Ferdinand Magellan", "Vasco da Gama"], answer: "Christopher Columbus" }, 
+        //the vikings actually discovered the americas a couple hundred years before columbus did
+        { question: "Aliansi militer yang dibentuk Blok Barat adalah?", options: ["NATO", "COMECON", "SEACO", "PBB"], answer: "NATO" },
+        { question: "Krisis Rudal Kuba terjadi pada tahun?", options: ["1989", "1945", "1991", "1962"], answer: "1962" },
       ],
     },
+    chem: {
+      1: [
+        { question: "Apa rumus kimia untuk air?", options: ["H2O", "CO2", "O2", "H2O2"], answer: "H2O" },
+        { question: "Partikel terkecil penyusun senyawa adalah...", options: ["Molekul", "Atom", "Proton", "Ion"], answer: "Molekul" },
+        { question: "Atom yang memiliki jumlah proton sebanyak 11 adalah atom...", options: ["Pb", "Na", "Ca", "C"], answer: "Na" },
+      ],
+      2: [
+        { question: "Proses yang terjadi pada anoda dalam sel elektrokimia adalah:", options: ["Reduksi", "Oksidasi", "Induksi", "Ionisasi"], answer: "Oksidasi" },
+        { question: "Ion yang menuju katoda dalam elektrolisis adalah:", options: ["Anion", "Kation", "Neutron", "Elektron"], answer: "Kation" },
+        { question: "Prinsip yang digunakan untuk mengubah posisi kesetimbangan disebut hukum…", options: ["Avogadro", "Dalton", "Boyle", "Le Chatelier"], answer: "Le Chatelier" },
+      ],
+      3: [
+        { question: "Larutan yang bersifat asam memiliki pH...", options: ["0-7", "7", "7-14", "14"], answer: "7" },
+        { question: "Zat berikut yang bersifat basa adalah...", options: ["HCL", "NaOH", "H2SO4", "CO2"], answer: "NaOH" },
+        { question: "Unsur berikut yang termasuk logam alkali tanah adalah...", options: ["Li", "Ba", "Ca", "Ne"], answer: "Ca" },
+      ],
+    },
+    physic: {
+      1: [
+        { question: "Apa yang terjadi pada tekanan dalam fluida yang mengalir melalui pipa yang menyempit?", options: ["Tekanan meningkat", "Tekanan menurun", "Tekanan tetap", "Tidak ada pengaruh"], answer: "Tekanan menurun" },
+        { question: "Hukum yang menjelaskan hubungan antara tekanan dan volume dalam gas yang diperas adalah...", options: ["Hukum Boyle", "Hukum Archimedes", "Hukum Pascal", "Hukum Charles"], answer: "Hukum Boyle" },
+        { question: "Suatu benda bergerak lurus dengan kecepatan tetap. Apa yang menyebabkan benda tersebut bergerak seperti itu?", options: ["Hukum Newton I", "Hukum Newton II", "Hukum Newton III", "Gaya gesek"], answer: "Hukum Newton I" },
+      ],
+      2: [
+        { question: "Gelombang yang merambat melalui air adalah..", options: ["Elektromagnetik", "Longitudinal", "Transversal", "Mekanik"], answer: "Transversal" },
+        { question: "Jika resistansi meningkat, maka arus...", options: ["Meningkat", "Menurun", "Tetap", "Berhenti"], answer: "Menurun" },
+        { question: "Energi yang disalurkan tergantung pada..", options: ["Tegangan & resistansi", "Arus & waktu", "Tegangan & waktu", "Arus & panjang kawat"], answer: "Arus & waktu" },
+      ],
+      3: [
+        { question: "Apa partikel yang menunjukkan sifat gelombang?", options: ["Elektron", "Proton", "Neutron", "Foton"], answer: "Elektron" },
+        { question: "Siapa ilmuwan yang pertama kali memperkenalkan konsep kuantum energi?", options: ["Albert Einstein", "Max Planck", "Niels Bohr", "Werner Heisenberg"], answer: "Max Planck" },
+        { question: "Fenomena apa yang menjadi bukti sifat partikel cahaya?", options: ["Difraksi", "Interferensi", "Efek Fotolistrik", "Polarisasi"], answer: "Efek Fotolistrik" },
+      ],
+    },
+    economy: {
+      1: [
+        { question: "Kebutuhan yang harus dipenuhi untuk kelangsungan hidup disebut kebutuhan..", options: ["Primer", "Sekunder", "Tersier", "Individu"], answer: "Primer" },
+        { question: "Faktor utama yang memengaruhi jumlah barang yang diminta adalah..", options: ["Harga barang itu sendiri", "Teknologi produksi", "Subsidi pemerintah", "Tingkat pendidikan"], answer: "Harga barang itu sendiri" },
+        { question: "Jika jumlah permintaan lebih besar dari jumlah penawaran, maka akan terjadi..", options: ["Kelangkaan", "Surplus", "Stabilitas harga", "Penurunan harga"], answer: "Kelangkaan" },
+      ],
+      2: [
+        { question: "Apa fungsi utama bank sentral?", options: ["Memberi kredit", "Atur moneter", "Simpan dana", "Investasi"], answer: "Atur moneter" },
+        { question: "Tujuan kebijakan fiskal?", options: ["Kontrol inflasi", "Tingkatkan ekspor", "Atur anggaran", "Stabilkan nilai tukar"], answer: "Atur anggaran" },
+        { question: "Apa ynag termasuk indikator pertumbuhan ekonomi?", options: ["inflasi", "PDB", "nilai tukar", "suku bunga"], answer: "PDB" },
+      ],
+      3: [
+        { question: "Apa fungsi pasar modal?", options: ["Tempat investasi", "Tempat menabung", "Tempat pinjaman uang", "Tempat jual beli barang"], answer: "Tempat investasi " },
+        { question: "Instrumen utama di pasar modal?", options: ["Uang", "Saham", "Emas", "Barang"], answer: "Saham" },
+        { question: "Siapa pengawas pasar modal?", options: ["BI", "OJK", "BEI", "BPK"], answer: "OJK" },
+      ],
+    },
+    math: {
+      1: [
+        { question: "Jika f(x)=3x-2, maka f(2) adalah", options: ["3", "4", "6", "10"], answer: "4" },
+        { question: "Jika f(x)=2x+3, maka f(4) adalah", options: ["10", "13", "11", "16"], answer: "11" },
+        { question: "Jika f(x)=4x-8, maka f(5) adalah", options: ["12", "16", "10", ""20], answer: "12" },
+      ],
+      2: [
+        { question: "Jika  segitiga sama kaki memiliki panjang sisi alas 6x dan tinggi 8x, maka luas segitiga adalah", options: ["24x", "18x", "12x", "48x"], answer: "24x" },
+        { question: "Nilai dari tan 45 derajat adalah..", options: ["0", "1", "0,5", "infinite"], answer: "1" },
+        { question: "Jika sin x adalah 3/5, maka cos x adalah", options: ["4/5", "3/5", "5/3", "5/4"], answer: "4/5" },
+      ],
+      3: [
+        { question: "Panjang jari-jari lingkaran adalah 10 cm. Berapakah panjang diameter?", options: ["5cm", "10cm", "15cm", "20cm"], answer: "20cm" },
+        { question: "Luas lingkaran dengan jari-jari 7x", options: ["49x", "154x", "14x", "77x"], answer: "49x" },
+        { question: "Jika diketahui Chord 20 cm & jarak ke pusat 6 cm. Berapa panjang jari-jari lingkaran", options: ["12cm", "13cm", "14cm", "15cm"], answer: "13cm" },
+      ],
+    },
+    
   };
 
   useEffect(() => {
@@ -111,12 +197,18 @@ const ExercisePage = () => {
     <div className="min-h-screen bg-cover bg-center flex flex-col items-center p-4" style={{ backgroundImage: "url('/images/space.png')" }}>
       <h1 className="text-3xl font-bold mb-4 text-indigo-950">Pokémon Exercise</h1>
 
+
+  //add shit to work
       <div className="mb-4">
         <label htmlFor="category" className="mr-2 font-bold text-indigo-950">Choose Category:</label>
         <select id="category" value={category} onChange={handleCategoryChange} className="border rounded p-2">
-          <option value="biology">Biology</option>
-          <option value="geography">Geography</option>
-          <option value="history">History</option>
+          <option value="biology">Biologi</option>
+          <option value="chem">Kimia</option>
+          <option value="physics">Fisika</option>
+          <option value="math">Matematika</option>
+          <option value="economy">Ekonomi</option>
+          <option value="geography">Geografi</option>
+          <option value="history">Sejarah</option>
         </select>
       </div>
 
