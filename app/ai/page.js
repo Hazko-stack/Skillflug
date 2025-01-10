@@ -1,6 +1,7 @@
 "use client"; 
 
 import { useState } from "react";
+import DOMPurify from "dompurify";  
 
 export default function AI() {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,11 +23,13 @@ export default function AI() {
       });
       const data = await res.json();
       
+      const sanitizedUserMessage = DOMPurify.sanitize(userMessage);
+      const sanitizedAiResponse = DOMPurify.sanitize(data.content);
       
       setMessages((prevMessages) => [
         ...prevMessages,
-        { type: "user", content: userMessage },
-        { type: "ai", content: data.content },
+        { type: "user", content: sanitizedUserMessage },
+        { type: "ai", content: sanitizedAiResponse },
       ]);
       setUserMessage(""); 
     } catch (error) {
