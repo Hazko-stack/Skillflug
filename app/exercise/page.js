@@ -86,53 +86,36 @@ const ExercisePage = () => {
     },
     physic: {
       1: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Apa yang terjadi pada tekanan dalam fluida yang mengalir melalui pipa yang menyempit?", options: ["Tekanan meningkat", "Tekanan menurun", "Tekanan tetap", "Tidak ada pengaruh"], answer: "Tekanan menurun" },
+        { question: "Hukum yang menjelaskan hubungan antara tekanan dan volume dalam gas yang diperas adalah...", options: ["Hukum Boyle", "Hukum Archimedes", "Hukum Pascal", "Hukum Charles"], answer: "Hukum Boyle" },
+        { question: "Suatu benda bergerak lurus dengan kecepatan tetap. Apa yang menyebabkan benda tersebut bergerak seperti itu?", options: ["Hukum Newton I", "Hukum Newton II", "Hukum Newton III", "Gaya gesek"], answer: "Hukum Newton I" },
       ],
       2: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Gelombang yang merambat melalui air adalah..", options: ["Elektromagnetik", "Longitudinal", "Transversal", "Mekanik"], answer: "Transversal" },
+        { question: "Jika resistansi meningkat, maka arus...", options: ["Meningkat", "Menurun", "Tetap", "Berhenti"], answer: "Menurun" },
+        { question: "Energi yang disalurkan tergantung pada..", options: ["Tegangan & resistansi", "Arus & waktu", "Tegangan & waktu", "Arus & panjang kawat"], answer: "Arus & waktu" },
       ],
       3: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Apa partikel yang menunjukkan sifat gelombang?", options: ["Elektron", "Proton", "Neutron", "Foton"], answer: "Elektron" },
+        { question: "Siapa ilmuwan yang pertama kali memperkenalkan konsep kuantum energi?", options: ["Albert Einstein", "Max Planck", "Niels Bohr", "Werner Heisenberg"], answer: "Max Planck" },
+        { question: "Fenomena apa yang menjadi bukti sifat partikel cahaya?", options: ["Difraksi", "Interferensi", "Efek Fotolistrik", "Polarisasi"], answer: "Efek Fotolistrik" },
       ],
     },
     economy: {
       1: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Kebutuhan yang harus dipenuhi untuk kelangsungan hidup disebut kebutuhan..", options: ["Primer", "Sekunder", "Tersier", "Individu"], answer: "Primer" },
+        { question: "Faktor utama yang memengaruhi jumlah barang yang diminta adalah..", options: ["Harga barang itu sendiri", "Teknologi produksi", "Subsidi pemerintah", "Tingkat pendidikan"], answer: "Harga barang itu sendiri" },
+        { question: "Jika jumlah permintaan lebih besar dari jumlah penawaran, maka akan terjadi..", options: ["Kelangkaan", "Surplus", "Stabilitas harga", "Penurunan harga"], answer: "Kelangkaan" },
       ],
       2: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Apa fungsi utama bank sentral?", options: ["Memberi kredit", "Atur moneter", "Simpan dana", "Investasi"], answer: "Atur moneter" },
+        { question: "Tujuan kebijakan fiskal?", options: ["Kontrol inflasi", "Tingkatkan ekspor", "Atur anggaran", "Stabilkan nilai tukar"], answer: "Atur anggaran" },
+        { question: "Apa ynag termasuk indikator pertumbuhan ekonomi?", options: ["inflasi", "PDB", "nilai tukar", "suku bunga"], answer: "PDB" },
       ],
       3: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-      ],
-    },
-    bahasa: {
-      1: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-      ],
-      2: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-      ],
-      3: [
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question: "Apa fungsi pasar modal?", options: ["Tempat investasi", "Tempat menabung", "Tempat pinjaman uang", "Tempat jual beli barang"], answer: "Tempat investasi " },
+        { question: "Instrumen utama di pasar modal?", options: ["Uang", "Saham", "Emas", "Barang"], answer: "Saham" },
+        { question: "Siapa pengawas pasar modal?", options: ["BI", "OJK", "BEI", "BPK"], answer: "OJK" },
       ],
     },
     math: {
@@ -224,7 +207,6 @@ const ExercisePage = () => {
           <option value="physics">Fisika</option>
           <option value="math">Matematika</option>
           <option value="economy">Ekonomi</option>
-          <option value="bahasa">Bahasa</option>
           <option value="geography">Geografi</option>
           <option value="history">Sejarah</option>
         </select>
