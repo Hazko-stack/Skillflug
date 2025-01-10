@@ -28,30 +28,30 @@ const ExercisePage = () => {
       3: [
         { question: "Organ mana yang bertanggung jawab untuk memompa darah?", options: ["Paru-paru", "Ginjal", "Jantung", "Otak"], answer: "Jantung" },
         { question: "Apa proses yang membuat tanaman dapat membuat makanannya sendiri?", options: ["Respirasi", "Fotosintesis", "Pencernaan", "Eksresi"], answer: "Fotosintesis" },
-        { question: "kelenjar apa yang menghasilkan hormon melatonin?", options: ["Adrenal", "Hipofisis", "Timus", "Pineal"], answer: "" },
+        { question: "kelenjar apa yang menghasilkan hormon melatonin?", options: ["Adrenal", "Hipofisis", "Timus", "Pineal"], answer: "Pineal" },
       ],
     },
     geography: {
       1: [
-        { question: "Benua apa yang memiliki wilayah paling luas?", options: ["Africa", "Asia", "Europe", "Antarctica"], answer: "Asia" },
+        { question: "Benua apa yang memiliki wilayah paling luas?", options: ["Afrika", "Asia", "Eropa", "Antartika"], answer: "Asia" },
         { question: "Apa ibu kota Perancis?", options: ["Rome", "Madrid", "Paris", "Berlin"], answer: "Paris" },
-        { question: "Konsep yang menggambarkan kecenderungan suatu pola untuk mengelompok merupakan prinsip geografi yakni", options: ["Aglomerasi", "Morfologi", "Interaksi", "Keterjangkauan"], answer: "Aglomerasi" },
+        { question: "Konsep yang menggambarkan kecenderungan suatu pola untuk mengelompok merupakan prinsip geografi yakni", options: ["Aglomerasi", "Morfologi", "Interaksi", "Keterjangkauan"], answer: "Aglomerasi"},
       ],
       2: [
         { question: "Apa nama sungai terpanjang di dunia?", options: ["Amazon", "Nile", "Yangtze", "Mississippi"], answer: "Nile" },
-        { question: "Curah hujan yang mengalir di permukaan tanah juga disebut dengan...", options: ["", "", "", "Run-off"], answer: "" },
+        { question: "Curah hujan yang mengalir di permukaan tanah juga disebut dengan...", options: ["Danau", "Sungai", "Badai", "Run-off"], answer: "Run-off" },
         { question: "", options: ["", "", "", ""], answer: "" },
       ],
       3: [
         { question: "Gunung Everest terletak di pegunungan...", options: ["Andes", "Himalayas", "Rockies", "Alps"], answer: "Himalayas" },
         { question: "Yang bukan merupakan dasar penggolongan hutan..", options: ["Asal", "Iklim", "Hewan", "Letak"], answer: "Hewan" },
-        { question: "Yang bukan merupakan bioma...", options: ["Gurun", "Taiga", "Sabana", ""], answer: "" },
+        { question: "Yang bukan merupakan bioma...", options: ["Gurun", "Taiga", "Sabana", "Peninsula"], answer: "Peninsula" },
       ],
     },
     history: {
       1: [
         { question: "Who was the first President of the United States?", options: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], answer: "George Washington" },
-        { question: "", options: ["", "", "", ""], answer: "" },
+        { question:"Kapan era kejayaan sang Alexander Agung", options: ["", "", "", ""], answer: "" },
         { question: "", options: ["", "", "", ""], answer: "" },
       ],
       2: [
