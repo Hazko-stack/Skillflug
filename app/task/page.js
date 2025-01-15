@@ -1,38 +1,60 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import DOMPurify from "dompurify";
 
 export default function Progress() {
   const [startTime, setStartTime] = useState(() => {
-    return parseInt(localStorage.getItem("startTime")) || Date.now();
+    if (typeof window !== "undefined") {
+      return parseInt(localStorage.getItem("startTime")) || Date.now();
+    }
+    return Date.now(); // Default untuk server-side rendering
   });
+
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [name, setName] = useState(localStorage.getItem("name") || "");
-  const [todos, setTodos] = useState(() => {
-    const savedTodos = localStorage.getItem("todos");
-    return savedTodos ? JSON.parse(savedTodos) : [];
+  const [name, setName] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("name") || "";
+    }
+    return ""; // Default untuk server-side rendering
   });
+
+  const [todos, setTodos] = useState(() => {
+    if (typeof window !== "undefined") {
+      const savedTodos = localStorage.getItem("todos");
+      return savedTodos ? JSON.parse(savedTodos) : [];
+    }
+    return []; // Default untuk server-side rendering
+  });
+
   const [newTodo, setNewTodo] = useState("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setElapsedTime(Math.floor((Date.now() - startTime) / 1000));
-    }, 1000);
+    if (typeof window !== "undefined") {
+      const interval = setInterval(() => {
+        setElapsedTime(Math.floor((Date.now() - startTime) / 1000));
+      }, 1000);
 
-    return () => clearInterval(interval);
+      return () => clearInterval(interval);
+    }
   }, [startTime]);
 
   const saveName = () => {
-    localStorage.setItem("name", name);
-    alert("Name updated successfully!");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("name", name);
+      alert("Name updated successfully!");
+    }
   };
 
   const addTodo = () => {
     if (newTodo.trim() === "") return;
-    const updatedTodos = [...todos, { id: Date.now(), text: newTodo, done: false }];
+    const sanitizedTodo = DOMPurify.sanitize(newTodo); // Sanitize input
+    const updatedTodos = [...todos, { id: Date.now(), text: sanitizedTodo, done: false }];
     setTodos(updatedTodos);
     setNewTodo("");
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    }
   };
 
   const toggleTodo = (id) => {
@@ -40,13 +62,17 @@ export default function Progress() {
       todo.id === id ? { ...todo, done: !todo.done } : todo
     );
     setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    }
   };
 
   const deleteTodo = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    if (typeof window !== "undefined") {
+      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    }
   };
 
   const calculateTimeUnits = (seconds) => {
@@ -61,7 +87,6 @@ export default function Progress() {
 
   return (
     <div className="min-h-screen py-4 px-4 sm:px-6 bg-wave bg-cover bg-center grid grid-cols-1 gap-6">
-      {/* Left Section (Progress & Todo List) */}
       <div className="card bg-base-100 shadow-xl p-4 sm:p-6 mb-6">
         <h1 className="card-title text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 sm:mb-6">
           Progress Tracker
