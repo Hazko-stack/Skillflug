@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Skillflug",
+  title: "SkillFlug",
   description: "by Unnoticed Concuerors Team",
 };
 
